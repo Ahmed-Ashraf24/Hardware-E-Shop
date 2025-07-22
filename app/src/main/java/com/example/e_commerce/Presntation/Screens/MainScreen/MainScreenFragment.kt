@@ -107,6 +107,11 @@ class MainScreenFragment : Fragment() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = BottomBannerAdapter(bottomBanners)
         }
+        binding.processorFilter.setOnClickListener {
+            activityInstnance.selectedCategory="CPU"
+            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,ItemsDisplayFragment())
+                .commit()
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 
