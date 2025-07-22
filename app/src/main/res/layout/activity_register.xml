@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Register Account"
+            android:textColor="#1A1A1A"
+            android:textSize="28sp" />
+
+        <!-- Subtitle -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="sans-serif"
+            android:text="Enter your details to register"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <!-- Name Field -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="sans-serif"
+            android:hint="Name"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#999999" />
+
+        <!-- Email Field -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="sans-serif"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#999999" />
+
+        <!-- Password Field -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="sans-serif"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#999999" />
+
+        <!-- Confirm Password Field -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="sans-serif"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#999999" />
+
+        <!-- Phone Number Field -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="sans-serif"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#999999" />
+
+        <!-- Address Field -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="sans-serif"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#999999" />
+
+        <!-- Gender Selection -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGenderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Gender"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/genderContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <!-- Female Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFemale"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/gender_button_female"
+                android:drawableStart="@drawable/ic_female"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:stateListAnimator="@animator/button_elevation"
+                android:text="Female"
+                android:textColor="@android:color/white" />
+
+            <!-- Male Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMale"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:background="@drawable/gender_button_male"
+                android:drawableStart="@drawable/ic_male"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:stateListAnimator="@animator/button_elevation"
+                android:text="Male"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <!-- Continue Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/continue_button_background"
+            android:elevation="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@animator/button_elevation"
+            android:text="Continue"
+            android:textColor="@android:color/white" />
+
+        <!-- Sign In Link -->
+        <TextView
+            android:id="@+id/tvSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Have an account? Sign In"
+            android:textColor="#1E88E5"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>

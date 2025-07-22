@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#F5F5F5"
+    android:padding="16dp"
+>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Shipping Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SHIPPING"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#212121"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add / Edit"
+                    android:textSize="14sp"
+                    android:textColor="#1976D2"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/user_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Banu Elson\norders@banuelson.com\n+49 179 711 1010\nLeibnizstraße 16, Wohnheim 6, No. 8X\nClausthal-Zellerfeld, Germany"
+                android:textSize="14sp"
+                android:textColor="#424242"
+                android:layout_marginTop="8dp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Billing and delivery addresses are the same."
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Payment Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PAYMENT"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#212121"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add / Edit"
+                    android:textSize="14sp"
+                    android:textColor="#1976D2"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Credit / Debit Card"
+                android:textSize="14sp"
+                android:textColor="#424242"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Cardholder Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cardholder Name"
+                android:foregroundTint="#1A1A1A"
+                app:boxStrokeColor="#1A1A1A"
+                app:hintTextColor="#1A1A1A"
+
+                android:textColor="#1A1A1A"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_holder_name"
+                    android:textColor="#1A1A1A"
+                    android:foregroundTint="#1A1A1A"
+                    app:boxStrokeColor="#1A1A1A"
+                    app:hintTextColor="#1A1A1A"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="Banu Elson"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Card Number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#1A1A1A"
+                android:foregroundTint="#1A1A1A"
+                app:boxStrokeColor="#1A1A1A"
+                app:hintTextColor="#1A1A1A"
+
+                android:hint="Card Number"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="#1A1A1A"
+                    android:foregroundTint="#1A1A1A"
+                    app:boxStrokeColor="#1A1A1A"
+                    app:hintTextColor="#1A1A1A"
+
+                    android:maxLength="16"
+                    android:drawableEnd="@drawable/baseline_credit_card_24"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Expiry Date and Security Code -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <!-- Expiry Date -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1A1A1A"
+                        android:foregroundTint="#1A1A1A"
+                        app:boxStrokeColor="#1A1A1A"
+                        app:hintTextColor="#1A1A1A"
+
+                        android:hint="Month"
+                        android:layout_marginEnd="8dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/month_exp"
+                            android:layout_width="match_parent"
+                            android:textColor="#1A1A1A"
+                            android:foregroundTint="#1A1A1A"
+                            app:boxStrokeColor="#1A1A1A"
+                            app:hintTextColor="#1A1A1A"
+
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="12"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#1A1A1A"
+                        android:foregroundTint="#1A1A1A"
+                        app:boxStrokeColor="#1A1A1A"
+
+                        android:layout_weight="1"
+                        android:hint="Year"
+                        app:hintTextColor="#1A1A1A"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/year_exp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#1A1A1A"
+                            android:foregroundTint="#1A1A1A"
+                            app:boxStrokeColor="#1A1A1A"
+                            app:hintTextColor="#1A1A1A"
+
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="25"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Security Code -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#1A1A1A"
+                    android:foregroundTint="#1A1A1A"
+                    app:boxStrokeColor="#1A1A1A"
+                    app:hintTextColor="#1A1A1A"
+
+                    android:hint="Security Code"
+                    android:layout_marginStart="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cvc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberPassword"
+                        app:boxStrokeColor="#1A1A1A"
+                        app:hintTextColor="#1A1A1A"
+
+                        android:textColor="#1A1A1A"
+                        android:foregroundTint="#1A1A1A"
+                        android:maxLength="4"
+                        android:text="574"
+                        android:drawableEnd="@drawable/ic_info"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Remember Card Checkbox -->
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember my card for next purchases."
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Order Summary -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 Items"
+                android:textSize="14sp"
+                android:textColor="#424242"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arrives by April 3rd to April 9th"
+                android:textSize="14sp"
+                android:textColor="#424242"
+                android:layout_marginTop="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:id="@+id/product_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NikeCourt Lite 2"
+                        android:textSize="14sp"
+                        android:textColor="#212121"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Qty: 1"
+                        android:textSize="14sp"
+                        android:textColor="#424242"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$67"
+                    android:textSize="14sp"
+                    android:textColor="#212121"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Total and Pay Now Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/total_cost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="$147.45"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#212121"/>
+
+            <Button
+                android:id="@+id/pay_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pay Now"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                style="@style/Widget.MaterialComponents.Button"/>
+        </LinearLayout>
+
+        <!-- Footer Note -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is the final step. After you touch the Pay Now button, the payment will be processed."
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:layout_marginTop="8dp"
+            android:gravity="center"/>
+    </LinearLayout>
+</ScrollView>

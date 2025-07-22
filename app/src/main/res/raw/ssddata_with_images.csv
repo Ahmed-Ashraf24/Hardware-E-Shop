@@ -1,0 +1,68 @@
+Name,Price,Producer,MPN,EAN,UPC,Form Factor,Protocol,Size,NAND,Controller,Image URL
+Crucial P2 1000 GB,$78.51 USD,Crucial,CT1000P2SSD8,6.50E+11,,M.2,NVM,1000 GB,TLC,Phison PS5013-E13T,https://m.media-amazon.com/images/I/61eqMCabEyL._AC_UY218_.jpg
+ADATA XPG SX8200 Pro Series 2000 GB,$217.61 USD,ADATA,ASX8200PNP-2TT-C,4.71E+12,,M.2,NVM,2000 GB,TLC,Silicon Motion SM2262EN,https://m.media-amazon.com/images/I/61nL3BOss0L._AC_UY218_.jpg
+ADATA XPG SX8200 Pro Series 512 GB,$261.13 USD,ADATA,ASX8200PNP-512GT-C,4.71E+12,,M.2,NVM,512 GB,TLC,Silicon Motion SM2262EN,https://m.media-amazon.com/images/I/61nL3BOss0L._AC_UY218_.jpg
+ADATA XPG SX8200 Series,$82.74 USD,ADATA,ASX8200NP-240GT-C,4.71E+12,,M.2,NVM,240 GB,,Silicon Motion SM2262,https://m.media-amazon.com/images/I/81piu5tiJtL._AC_UY218_.jpg
+ADATA XPG SX8200 Series,$161.48 USD,ADATA,ASX8200NP-480GT-C,4.71E+12,,M.2,NVM,480 GB,TLC,Silicon Motion SM2262,https://m.media-amazon.com/images/I/61nL3BOss0L._AC_UL320_.jpg
+Corsair MP400 1000 GB,$123.31 USD,Corsair,CSSD-F1000GBMP400,8.40E+11,,M.2,NVM,1000 GB,QLC,PS5012-E12S,https://m.media-amazon.com/images/I/71K5YbKrcYL._AC_UY218_.jpg
+Corsair MP400 4000 GB,$553.45 USD,Corsair,CSSD-F4000GBMP400,8.40E+11,,M.2,NVM,4000 GB,QLC,PS5012-E12S,https://m.media-amazon.com/images/I/61wDufiCrjL._AC_UY218_.jpg
+Corsair MP600 1000 GB,$162.46 USD,Corsair,CSSD-F1000GBMP600,8.40E+11,,M.2,NVM,1000 GB,MLC,Phisons PS5016-E16,https://m.media-amazon.com/images/I/71TS0FCGLfL._AC_UY218_.jpg
+Corsair MP600 2000 GB,$248.07 USD,Corsair,CSSD-F2000GBMP600,8.40E+11,,M.2,NVM,2000 GB,MLC,Phisons PS5016-E16,https://m.media-amazon.com/images/I/71As0+XuPBL._AC_UY218_.jpg
+Corsair MP600 500 GB,$90.66 USD,Corsair,CSSD-F500GBMP600,8.40E+11,,M.2,NVM,500 GB,TLC,Phisons PS5016-E16,https://m.media-amazon.com/images/I/61xyXRq0+bL._AC_UY218_.jpg
+Corsair MP600 Pro 1000 GB,$94.31 USD,Corsair,CSSD-F1000GBMP600PRO,8.40E+11,,M.2,NVM,1000 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/71As0+XuPBL._AC_UY218_.jpg
+Corsair MP600 Pro 2000 GB,$146.64 USD,Corsair,CSSD-F2000GBMP600PRO,8.40E+11,,M.2,NVM,2000 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/71As0+XuPBL._AC_UY218_.jpg
+Crucial MX500 1000 GB,$59.51 USD,Crucial,CT1000MX500SSD1,6.50E+11,6.50E+11,SATA,SATA,1000 GB,TLC,Silicon Motion SM2258,https://m.media-amazon.com/images/I/71duypVENNL._AC_UY218_.jpg
+Crucial MX500 2000 GB,$112.41 USD,Crucial,CT2000MX500SSD1,6.50E+11,6.50E+11,SATA,SATA,2000 GB,TLC,Silicon Motion SM2258,https://m.media-amazon.com/images/I/71duypVENNL._AC_UY218_.jpg
+Crucial MX500 500 GB,$36.25 USD,Crucial,CT500MX500SSD1,6.50E+11,6.50E+11,SATA,SATA,500 GB,TLC,Silicon Motion SM2258,https://m.media-amazon.com/images/I/71duypVENNL._AC_UY218_.jpg
+Crucial P1 1000 GB,$102.15 USD,Crucial,CT1000P1SSD8,6.50E+11,,M.2,NVM,1000 GB,QLC,Silicon Motion SM2263EN,https://m.media-amazon.com/images/I/61cBmeZHM8L._AC_UL320_.jpg
+Crucial P1 500 GB,$59.73 USD,Crucial,CT500P1SSD8,6.50E+11,6.50E+11,M.2,NVM,500 GB,QLC,Silicon Motion SM2263EN,https://m.media-amazon.com/images/I/41-GwINeIhL._AC_UY218_.jpg
+Crucial P2 250 GB,$36.84 USD,Crucial,CT250P2SSD8,6.50E+11,,M.2,NVM,250 GB,TLC,Phison PS5013-E13T,https://m.media-amazon.com/images/I/61eqMCabEyL._AC_UY218_.jpg
+Crucial P2 500 GB,$36.39 USD,Crucial,CT500P2SSD8,6.50E+11,,M.2,NVM,500 GB,TLC,Phison PS5013-E13T,https://m.media-amazon.com/images/I/61eqMCabEyL._AC_UY218_.jpg
+Gigabyte Aorus 2000 GB,$454.98 USD,Gigabyte,GP-ASM2NE6200TTTD,4.72E+12,,M.2,NVM,2000 GB,TLC,Phison PS5016-E16,https://m.media-amazon.com/images/I/61-5Y82kUEL._AC_UY218_.jpg
+Intel 660P 2000 GB,$338.75 USD,Intel,SSDPEKNW020T8X1,7.36E+11,7.36E+11,M.2,NVM,2000 GB,QLC,Silicon Motion SM2263EN,https://m.media-amazon.com/images/I/61VL8FcTNfL._AC_UY218_.jpg
+Intel 660P 512 GB,$55.03 USD,Intel,SSDPEKNW512G8X1,7.36E+11,7.36E+11,M.2,NVM,512 GB,QLC,Silicon Motion SM2263EN,https://m.media-amazon.com/images/I/61NLb6yuSKL._AC_UY218_.jpg
+Sabrent Rocket,$87.77 USD,Sabrent,SB-ROCKET-512,8.40E+11,,M.2,NVM,512 GB,TLC,Phison PS5012,https://m.media-amazon.com/images/I/71e9QuGwLEL._AC_UY218_.jpg
+Sabrent Rocket,$97.92 USD,Sabrent,SB-ROCKET-1TB,8.40E+11,,M.2,NVM,1000 GB,TLC,Phison PS5012,https://m.media-amazon.com/images/I/61iG2zxjtPL._AC_UY218_.jpg
+Samsung 860 EVO Series 1000 GB,$166.84 USD,SAMSUNG,MZ-76E1T0B/EU,8.81E+12,,SATA,SATA,1000 GB,TLC,Samsung MJX,https://m.media-amazon.com/images/I/911ujeCkGfL._AC_UY218_.jpg
+Samsung 860 EVO Series 500 GB,$130.92 USD,SAMSUNG,MZ-76E500B/EU,8.81E+12,,SATA,SATA,500 GB,TLC,Samsung MJX,https://m.media-amazon.com/images/I/911ujeCkGfL._AC_UY218_.jpg
+Samsung 970 EVO,$123.31 USD,SAMSUNG,MZ-V7E250BW,8.80E+12,,M.2,NVM,250 GB,MLC,Samsung Phoenix,https://m.media-amazon.com/images/I/71pDbAfKuAL._AC_UY218_.jpg
+Samsung 970 EVO,$478.74 USD,SAMSUNG,MZ-V7E2T0BW,8.80E+12,,M.2,NVM,2000 GB,MLC,Samsung Phoenix,https://m.media-amazon.com/images/I/71FHPYQ2JbL._AC_UY218_.jpg
+Samsung 970 EVO 1000 GB,$199.72 USD,SAMSUNG,MZ-V7E1T0BW,8.80E+12,8.87E+11,M.2,NVM,1000 GB,MLC,Samsung Phoenix,https://m.media-amazon.com/images/I/71FHPYQ2JbL._AC_UY218_.jpg
+Samsung 970 EVO 500 GB,$58.67 USD,SAMSUNG,MZ-V7E500BW,8.80E+12,8.87E+11,M.2,NVM,500 GB,MLC,Samsung Phoenix,https://m.media-amazon.com/images/I/81ABwgAl-gL._AC_UY218_.jpg
+Samsung 970 Evo Plus 1000 GB,$145.07 USD,SAMSUNG,MZ-V7S1T0BW,8.80E+12,,M.2,NVM,1000 GB,MLC,Samsung Phoenix,https://m.media-amazon.com/images/I/71FHPYQ2JbL._AC_UY218_.jpg
+Samsung 970 Evo Plus 2000 GB,$290.14 USD,SAMSUNG,MZ-V7S2T0BW,8.80E+12,8.87E+11,M.2,NVM,2000 GB,MLC,Samsung Phoenix,https://m.media-amazon.com/images/I/71OYNmVRFhL._AC_UY218_.jpg
+Seagate FireCuda 520 2000 GB,$335.72 USD,Seagate,ZP2000GM3A002,8.72E+12,,M.2,NVM,2000 GB,TLC,Phison PS5012-E12 mit 8 Kanälen,https://m.media-amazon.com/images/I/71LLczLHTxL._AC_UY218_.jpg
+Seagate FireCuda 520 500 GB,$101.55 USD,Seagate,ZP500GM3A002,7.64E+11,,M.2,NVM,500 GB,TLC,Phison PS5012-E12 mit 8 Kanälen,https://m.media-amazon.com/images/I/71LLczLHTxL._AC_UY218_.jpg
+Western Digital Black SN750 NVMe M.2 Solid State Drive 1000 GB,$107.35 USD,Western Digital,WDS100T3X0C,7.18E+11,,M.2,NVM,1000 GB,TLC,Sandisk,https://m.media-amazon.com/images/I/61GPr8ekdcL._AC_UY218_.jpg
+Western Digital Black SN750 NVMe M.2 Solid State Drive 2000 GB,$184.96 USD,Western Digital,WDS200T3X0C,7.18E+11,,M.2,NVM,2000 GB,TLC,Sandisk,https://m.media-amazon.com/images/I/71Sr1zjPhwL._AC_UY218_.jpg
+Western Digital Black SN750 Solid State Drive 2000 GB,$406.2 USD,Western Digital,WDS200T3XHC,7.18E+11,,M.2,NVM,2000 GB,TLC,Sandisk,https://m.media-amazon.com/images/I/61GPr8ekdcL._AC_UY218_.jpg
+Western Digital Black SN750 Solid State Drive 500 GB,$85.21 USD,Western Digital,WDS500G3XHC,7.18E+11,,M.2,NVM,500 GB,TLC,Sandisk,https://m.media-amazon.com/images/I/51pSH-wmJYL._AC_UY218_.jpg
+Western Digital Blue SN550 NVMe 1000 GB,$93.56 USD,Western Digital,WDS100T2B0C,7.18E+11,,M.2,NVM,1000 GB,TLC,Western Digital,https://m.media-amazon.com/images/I/61w5yE7SNCL._AC_UY218_.jpg
+Western Digital Blue SN550 NVMe 500 GB,$50.77 USD,Western Digital,WDS500G2B0C,7.18E+11,,M.2,NVM,500 GB,TLC,Western Digital,https://m.media-amazon.com/images/I/61w5yE7SNCL._AC_UY218_.jpg
+ADATA Premier SP580,$55.83 USD,ADATA,ASP580SS3-120GM-C,4.71E+12,,SATA,SATA,120 GB,TLC,Marvel 88NV1120,https://m.media-amazon.com/images/I/71KHIbnrLsL._AC_UY218_.jpg
+ADATA XPG SX6000 Series,$42.93 USD,ADATA,ASX6000NP-128GT-C,4.71E+12,,M.2,NVM,128 GB,TLC,Realtek RTS5760,https://m.media-amazon.com/images/I/71qYFyLPy-L._AC_UY218_.jpg
+ADATA XPG SX6000 Series,$61.37 USD,ADATA,ASX6000NP-256GT-C,4.71E+12,,M.2,NVM,256 GB,TLC,Realtek RTS5760,https://m.media-amazon.com/images/I/61jBi4iKoML._AC_UY218_.jpg
+ADATA XPG SX6000 Series,$142.59 USD,ADATA,ASX6000NP-512GT-C,4.71E+12,,M.2,NVM,512 GB,TLC,Realtek RTS5760,https://m.media-amazon.com/images/I/51AnOVOe1KS._AC_UY218_.jpg
+ADATA XPG SX8200 Pro Series 1000 GB,$140.02 USD,ADATA,ASX8200PNP-1TT-C,4.71E+12,,M.2,NVM,1000 GB,TLC,Silicon Motion SM2262EN,https://m.media-amazon.com/images/I/61nL3BOss0L._AC_UY218_.jpg
+Corsair Force Series LE,$45.73 USD,Corsair,CSSD-F120GBLE200B,8.44E+11,,SATA,SATA,120 GB,TLC,,https://m.media-amazon.com/images/I/61p2oIuPU-L._AC_UY218_.jpg
+Corsair Force Series LS,$43.04 USD,Corsair,CSSD-F120GBLSB,8.44E+11,,SATA,SATA,120 GB,MLC,Phison PS3109,https://m.media-amazon.com/images/I/71fwLas-07L._AC_UY218_.jpg
+Corsair Force Series LS,$323.34 USD,Corsair,CSSD-F960GBLSB,8.44E+11,,SATA,SATA,960 GB,MLC,Phison PS3108,https://m.media-amazon.com/images/I/71a8VfW7qKL._AC_UY218_.jpg
+Corsair Force Series MP500 120GB MLC NVMe,$80.64 USD,Corsair,CSSD-F120GBMP500,8.44E+11,,M.2,NVM,120 GB,,,https://m.media-amazon.com/images/I/6183i7Op81L._AC_UY218_.jpg
+Corsair Force Series MP500 240GB MLC NVMe,$140.52 USD,Corsair,CSSD-F240GBMP500,8.44E+11,,M.2,NVM,240 GB,,,https://m.media-amazon.com/images/I/61wDufiCrjL._AC_UY218_.jpg
+Corsair Force Series MP500 480GB MLC NVMe,$145.07 USD,Corsair,CSSD-F480GBMP500,8.44E+11,,M.2,NVM,480 GB,,,https://m.media-amazon.com/images/I/716JxzvF89L._AC_UY218_.jpg
+Corsair Force Series MP510 240 GB,$49.32 USD,Corsair,CSSD-F240GBMP510,8.44E+11,,M.2,NVM,240 GB,TLC,PS5012-E12,https://m.media-amazon.com/images/I/719NTMotCKL._AC_UY218_.jpg
+Corsair MP400 R2 1000 GB,$104.44 USD,Corsair,CSSD-F1000GBMP400R2,8.40E+11,,M.2,NVM,1000 GB,QLC,PS5012-E12S,https://m.media-amazon.com/images/I/71K5YbKrcYL._AC_UY218_.jpg
+Corsair MP400 R2 2000 GB,$187.78 USD,Corsair,CSSD-F2000GBMP400R2,8.40E+11,,M.2,NVM,2000 GB,QLC,PS5012-E12S,https://m.media-amazon.com/images/I/71hVMTjmYuL._AC_UY218_.jpg
+Corsair MP400 R2 4000 GB,$539.67 USD,Corsair,CSSD-F4000GBMP400R2,8.40E+11,,M.2,NVM,4000 GB,QLC,PS5012-E12S,https://m.media-amazon.com/images/I/61wDufiCrjL._AC_UY218_.jpg
+Corsair MP600 Core 1000 GB,$115.32 USD,Corsair,CSSD-F1000GBMP600COR,8.40E+11,,M.2,NVM,1000 GB,TLC,Phison PS5016-E16,https://m.media-amazon.com/images/I/71zatFpboRL._AC_UY218_.jpg
+Corsair MP600 Core 2000 GB,$237.28 USD,Corsair,CSSD-F2000GBMP600COR,8.40E+11,,M.2,NVM,2000 GB,TLC,Phison PS5016-E16,https://m.media-amazon.com/images/I/51i9IAmE2ML._AC_UY218_.jpg
+Corsair MP600 Core 4000 GB,$525.89 USD,Corsair,CSSD-F4000GBMP600COR,8.40E+11,,M.2,NVM,4000 GB,QLC,Phison PS5016-E16,https://m.media-amazon.com/images/I/51i9IAmE2ML._AC_UY218_.jpg
+Corsair MP600 GS 1000 GB,$74.5 USD,Corsair,CSSD-F1000GBMP600GS,8.40E+11,,M.2,NVM,1000 GB,3D TLC,Phison PS2021-E21T,https://m.media-amazon.com/images/I/519+4QBP0TL._AC_UY218_.jpg
+Corsair MP600 GS 2000 GB,$179.35 USD,Corsair,CSSD-F2000GBMP600GS,8.40E+11,,M.2,NVM,2000 GB,3D TLC,Phison PS2021-E21T,https://m.media-amazon.com/images/I/519+4QBP0TL._AC_UY218_.jpg
+Corsair MP600 GS 500 GB,$43.52 USD,Corsair,CSSD-F0500GBMP600GS,8.40E+11,,M.2,NVM,500 GB,3D TLC,Phison PS2021-E21T,https://m.media-amazon.com/images/I/519+4QBP0TL._AC_UY218_.jpg
+Corsair MP600 Pro Hydro X Edition 2000 GB,$394.6 USD,Corsair,CSSD-F2000GBMP600HXE,8.40E+11,,M.2,NVM,2000 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/61Q+LScLyvL._AC_UY218_.jpg
+Corsair MP600 Pro LPX 1000 GB,$72.53 USD,Corsair,CSSD-F1000GBMP600PLP,8.40E+11,,M.2,NVM,1000 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/61xyXRq0+bL._AC_UY218_.jpg
+Corsair MP600 Pro LPX 2000 GB,$141.44 USD,Corsair,CSSD-F2000GBMP600PLP,8.40E+11,,M.2,NVM,2000 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/71As0+XuPBL._AC_UY218_.jpg
+Corsair MP600 Pro LPX 4000 GB,$275.64 USD,Corsair,CSSD-F4000GBMP600PLP,8.40E+11,,M.2,NVM,4000 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/71As0+XuPBL._AC_UY218_.jpg
+Corsair MP600 Pro LPX 500 GB,$50.77 USD,Corsair,CSSD-F0500GBMP600PLP,8.40E+11,,M.2,NVM,500 GB,TLC,"Phison PS5018-E18, 8 Kanäle",https://m.media-amazon.com/images/I/61xyXRq0+bL._AC_UY218_.jpg
+Corsair MP600 Pro NH 1000 GB,$76.16 USD,Corsair,CSSD-F1000GBMP600PNH,8.40E+11,,M.2,NVM,1000 GB,3D TLC,Phison PS2018-E18,https://m.media-amazon.com/images/I/51V1sa8+koL._AC_UY218_.jpg

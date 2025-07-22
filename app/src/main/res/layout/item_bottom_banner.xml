@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/gradient_ad"
+    android:padding="16dp">
+
+    <!-- Ad Image -->
+    <ImageView
+        android:id="@+id/ad_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@android:drawable/ic_menu_camera"
+        android:background="@drawable/circle_background" />
+
+    <!-- Ad Text -->
+    <TextView
+        android:id="@+id/ad_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="C02 - Cable Multifunction"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Shop Now Button -->
+    <Button
+        android:id="@+id/shop_now_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shop Now"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000" />
+</LinearLayout>

@@ -1,0 +1,71 @@
+Name,Price,Producer,MPN,EAN,UPC,Base Clock,Turbo Clock,Unlocked Multiplier,Cores,Threads,TDP,Socket,Integrated GPU,Image URL
+AMD Ryzen 5 5600X,$158.86 USD,AMD,100-100000065BOX,7.30E+11,,3.7 GHz,4.6 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Athlon 3000G,$53.22 USD,AMD,YD3000C6FHBOX,7.30E+11,,3.5 GHz,,TRUE,2,4,35 W,AM4,Radeon RX Vega 3,https://m.media-amazon.com/images/I/81DdgQpbMqL._AC_UY218_.jpg
+AMD Ryzen 3 3300X,$150.09 USD,AMD,100-100000159BOX,7.30E+11,,3.8 GHz,4.3 GHz,TRUE,4,8,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/81DdgQpbMqL._AC_UY218_.jpg
+AMD Ryzen 5 5500,$87.04 USD,AMD,100-100000457BOX,7.30E+11,,3.6 GHz,4.2 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 5 5600,$133.46 USD,AMD,100-100000927BOX,7.30E+11,,3.5 GHz,4.4 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/517vY9awQdL._AC_UY218_.jpg
+AMD Ryzen 5 5600G,$122.59 USD,AMD,100-100000252BOX,7.30E+11,,3.9 GHz,4.4 GHz,TRUE,6,12,65 W,AM4,"Radeon RX Vega 7, Cezanne",https://m.media-amazon.com/images/I/51f2hkWjTlL._AC_UY218_.jpg
+AMD Ryzen 5 7600,$216.89 USD,AMD,100-100001015BOX,7.30E+11,,3.8 GHz,5.1 GHz,TRUE,6,12,65 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/61h39mKsSBL._AC_UY218_.jpg
+AMD Ryzen 5 7600X,$202.37 USD,AMD,100-100000593WOF,7.30E+11,,4.7 GHz,5.3 GHz,TRUE,6,12,105 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/41j61j9aZGL._AC_UY218_.jpg
+AMD Ryzen 7 5700G,$188.59 USD,AMD,100-100000263BOX,7.30E+11,,3.8 GHz,4.6 GHz,TRUE,8,16,65 W,AM4,"Radeon RX Vega 8, Cezanne",https://m.media-amazon.com/images/I/61f5h6jDLAL._AC_UY218_.jpg
+AMD Ryzen 7 5700X,$187.87 USD,AMD,100-100000926WOF,7.30E+11,,3.4 GHz,4.6 GHz,TRUE,8,16,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51gRv8z+K6L._AC_UY218_.jpg
+AMD Ryzen 7 5800X,$231.38 USD,AMD,100-100000063WOF,7.30E+11,,3.8 GHz,4.7 GHz,TRUE,8,16,105 W,AM4,FALSE,https://m.media-amazon.com/images/I/61IIbwz-+ML._AC_UY218_.jpg
+AMD Ryzen 7 5800X3D,$304.65 USD,AMD,100-100000651WOF,7.30E+11,,3.4 GHz,4.5 GHz,FALSE,8,16,105 W,AM4,FALSE,https://m.media-amazon.com/images/I/61TXaMf2WyL._AC_UY218_.jpg
+AMD Ryzen 7 7700,$319.16 USD,AMD,100-100000592BOX,7.30E+11,,3.8 GHz,5.3 GHz,TRUE,8,16,65 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/51hfER1cZVL._AC_UY218_.jpg
+AMD Ryzen 7 7700X,$318.44 USD,AMD,100-100000591WOF,7.30E+11,,4.5 GHz,5.4 GHz,TRUE,8,16,105 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/51hfER1cZVL._AC_UY218_.jpg
+AMD Ryzen 7 7800X3D,$384.44 USD,AMD,100-100000910WOF,7.30E+11,,4.2 GHz,5.0 GHz,FALSE,8,16,120 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/51HqC0rU9HL._AC_UY218_.jpg
+AMD Ryzen 9 5900X,$325.69 USD,AMD,100-100000061WOF,7.30E+11,,3.7 GHz,4.8 GHz,TRUE,12,24,105 W,AM4,FALSE,https://m.media-amazon.com/images/I/51S-lEYQZJL._AC_UY218_.jpg
+AMD Ryzen 9 5950X,$224.86 USD,AMD,100-100000059WOF,7.30E+11,,3.4 GHz,4.9 GHz,TRUE,16,32,105 W,AM4,FALSE,https://m.media-amazon.com/images/I/61ISSSA+x+L._AC_UY218_.jpg
+AMD Ryzen 9 7900,$398.22 USD,AMD,100-100000590BOX,7.30E+11,,3.7 GHz,5.4 GHz,TRUE,12,24,65 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/51OEiWrUtqL._AC_UY218_.jpg
+AMD Ryzen 9 7900X,$424.34 USD,AMD,100-100000589WOF,7.30E+11,,4.7 GHz,5.6 GHz,TRUE,12,24,170 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/51OEiWrUtqL._AC_UY218_.jpg
+AMD Ryzen 9 7950X,$544.02 USD,AMD,100-100000514WOF,7.30E+11,,4.5 GHz,5.7 GHz,TRUE,16,32,170 W,AM5,Ryzen 7000 Graphics,https://m.media-amazon.com/images/I/61dukbEGziL._AC_UY218_.jpg
+AMD Ryzen Threadripper 3960X,$1238.93 USD,AMD,100-100000010WOF,7.30E+11,,3.8 GHz,4.5 GHz,TRUE,24,48,280 W,TRX40,FALSE,https://m.media-amazon.com/images/I/71Gyox1aqRL._AC_UY218_.jpg
+AMD Ryzen Threadripper 3970X,$1777.16 USD,AMD,100-100000011WOF,7.30E+11,,3.7 GHz,4.5 GHz,TRUE,32,64,280 W,TRX40,FALSE,https://m.media-amazon.com/images/I/71Gyox1aqRL._AC_UY218_.jpg
+AMD Ryzen Threadripper 3990X,$3917.02 USD,AMD,100-100000163WOF,7.30E+11,,2.9 GHz,4.3 GHz,TRUE,64,128,280 W,TRX40,FALSE,https://m.media-amazon.com/images/I/71Gyox1aqRL._AC_UY218_.jpg
+Intel Core i3-12100,$87.04 USD,Intel,BX8071512100,5.03E+12,7.36E+11,3.3 GHz,4.3 GHz,FALSE,4,8,60 W,1700,Intel UHD 730,https://m.media-amazon.com/images/I/51Cbvw+ScJL._AC_UY218_.jpg
+Intel Core i3-12100F,$87.04 USD,Intel,BX8071512100F,5.03E+12,7.36E+11,3.3 GHz,4.3 GHz,FALSE,4,8,60 W,1700,FALSE,https://m.media-amazon.com/images/I/51C8njBn7mL._AC_UY218_.jpg
+Intel Core i5-12400,$173.36 USD,Intel,BX8071512400,5.03E+12,7.36E+11,2.5 GHz,4.4 GHz,FALSE,6,12,65 W,1700,Intel UHD 730,https://m.media-amazon.com/images/I/51D+aC--oXL._AC_UY218_.jpg
+Intel Core i5-12400F,$144.35 USD,Intel,BX8071512400F,5.03E+12,7.36E+11,2.5 GHz,4.4 GHz,FALSE,6,12,65 W,1700,FALSE,https://m.media-amazon.com/images/I/51A6E9HPocL._AC_UY218_.jpg
+Intel Core i5-12600K,$231.38 USD,Intel,BX8071512600K,5.03E+12,7.36E+11,3.6 GHz,4.9 GHz,TRUE,6,12,125 W,1700,Intel UHD 770,https://m.media-amazon.com/images/I/51N5G+sX+IL._AC_UY218_.jpg
+Intel Core i5-12600KF,$268.0 USD,Intel,BX8071512600KF,5.03E+12,7.36E+11,3.7 GHz,4.9 GHz,TRUE,6,12,125 W,1700,FALSE,https://m.media-amazon.com/images/I/51ldM0r7NML._AC_UY218_.jpg
+Intel Core i5-13400,$224.13 USD,Intel,BX8071513400,5.03E+12,7.36E+11,2.5 GHz,GHz,FALSE,6,12,65 W,1700,FALSE,https://m.media-amazon.com/images/I/41yJSkT2CDL._AC_UY218_.jpg
+Intel Core i5-13400F,$195.84 USD,Intel,BX8071513400F,5.03E+12,7.36E+11,3.3 GHz,GHz,FALSE,6,12,65 W,1700,FALSE,https://m.media-amazon.com/images/I/51wQQ9WWa7L._AC_UY218_.jpg
+Intel Core i7-12700K,$217.61 USD,Intel,BX8071512700K,5.03E+12,7.36E+11,3.6 GHz,5.0 GHz,TRUE,8,16,125 W,1700,Intel UHD 770,https://m.media-amazon.com/images/I/51bW9uJzJFL._AC_UY218_.jpg
+Intel Core i7-13700,$340.19 USD,Intel,BX8071513700,5.03E+12,7.36E+11,4.0 GHz,GHz,FALSE,8,16,65 W,1700,FALSE,https://m.media-amazon.com/images/I/61m0zH-NiTL._AC_UY218_.jpg
+Intel Core i7-13700F,$347.45 USD,Intel,BX8071513700F,5.03E+12,7.36E+11,4.0 GHz,GHz,FALSE,8,16,65 W,1700,FALSE,https://m.media-amazon.com/images/I/61m0zH-NiTL._AC_UY218_.jpg
+Intel Core i9-12900,$485.99 USD,Intel,BX8071512900,5.03E+12,7.36E+11,2.4 GHz,5.1 GHz,FALSE,8,16,65 W,1700,Intel UHD 770,https://m.media-amazon.com/images/I/51EPe4BsyzL._AC_UY218_.jpg
+Intel Core i9-12900K,$405.47 USD,Intel,BX8071512900K,5.03E+12,,3.2 GHz,5.2 GHz,TRUE,8,16,125 W,1700,Intel UHD 770,https://m.media-amazon.com/images/I/51klBAsxGHL._AC_UY218_.jpg
+Intel Core i9-12900KF,$419.98 USD,Intel,BX8071512900KF,5.03E+12,7.36E+11,3.2 GHz,5.2 GHz,TRUE,8,16,125 W,1700,FALSE,https://m.media-amazon.com/images/I/51CUAct4KVL._AC_UY218_.jpg
+AMD A10-9700,$31.74 USD,AMD,AD9700AGABBOX,7.30E+11,7.30E+11,3.5 GHz,GHz,FALSE,4,4,65 W,AM4,Radeon R7,https://m.media-amazon.com/images/I/51qFncTA66L._AC_UY218_.jpg
+AMD A6-7400K,$49.0 USD,AMD,AD740KYBJABOX,7.30E+11,,3.5 GHz,3.9 GHz,TRUE,1,1,65 W,FM2+,FALSE,https://m.media-amazon.com/images/I/71x31p8x6BL._AC_UY218_.jpg
+AMD A8-7600,$77.17 USD,AMD,AD7600YBJABOX,7.30E+11,,3.1 GHz,3.8 GHz,FALSE,2,2,65 W,FM2+,FALSE,https://m.media-amazon.com/images/I/41j61j9aZGL._AC_UY218_.jpg
+AMD A8-7650K,$79.83 USD,AMD,AD765KXBJASBX,7.30E+11,,3.3 GHz,3.7 GHz,TRUE,2,2,95 W,FM2+,Radeon R7,https://m.media-amazon.com/images/I/A1vX7oEDOfL._AC_UY218_.jpg
+AMD Athlon 200GE,$68.31 USD,AMD,YD200GC6FBBOX,7.30E+11,7.30E+11,3.2 GHz,GHz,FALSE,2,4,35 W,AM4,Radeon RX Vega 3,https://m.media-amazon.com/images/I/81DdgQpbMqL._AC_UY218_.jpg
+AMD Athlon 220GE,$80.08 USD,AMD,YD220GC6FBBOX,7.30E+11,,3.4 GHz,GHz,FALSE,2,4,35 W,AM4,Radeon RX Vega 3,https://m.media-amazon.com/images/I/61OJEJXAXOL._AC_UY218_.jpg
+AMD Athlon 240GE,$71.52 USD,AMD,YD240GC6FBBOX,7.30E+11,,3.5 GHz,GHz,FALSE,2,4,35 W,AM4,Radeon RX Vega 3,https://m.media-amazon.com/images/I/61OJEJXAXOL._AC_UY218_.jpg
+AMD FX-6300,$87.16 USD,AMD,FD6300WMHKBOX,7.30E+11,,3.5 GHz,4.1 GHz,TRUE,6,6,95 W,AM3+,FALSE,https://m.media-amazon.com/images/I/81X4pIqFQ4L._AC_UY218_.jpg
+AMD FX-8300,$144.4 USD,AMD,FD8300WMHKBOX,7.30E+11,,3.3 GHz,4.2 GHz,TRUE,8,8,95 W,AM3+,FALSE,https://m.media-amazon.com/images/I/71wfycSqaoL._AC_UY218_.jpg
+AMD FX-8370,$145.36 USD,AMD,FD8370FRHKHBX,7.30E+11,,4.0 GHz,4.3 GHz,TRUE,8,8,125 W,AM3+,FALSE,https://m.media-amazon.com/images/I/81aAqEzKuDL._AC_UY218_.jpg
+AMD FX-9370,$239.38 USD,AMD,FD9370FHHKWOF,7.30E+11,,4.4 GHz,4.7 GHz,TRUE,4,4,220 W,AM3+,FALSE,https://m.media-amazon.com/images/I/61RK0IxVnDL._AC_UY218_.jpg
+AMD FX-9590,$234.29 USD,AMD,FD9590FHHKWOF,7.30E+11,,4.7 GHz,5.0 GHz,TRUE,8,8,220 W,AM3+,FALSE,https://m.media-amazon.com/images/I/61oPXi6DNAL._AC_UY218_.jpg
+AMD Ryzen 3 1200,$117.1 USD,AMD,YD1200BBAEBOX,7.30E+11,7.30E+11,3.1 GHz,3.4 GHz,TRUE,4,4,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/81DdgQpbMqL._AC_UY218_.jpg
+AMD Ryzen 3 1300X,$75.16 USD,AMD,YD130XBBAEBOX,7.30E+11,,3.5 GHz,3.7 GHz,TRUE,4,4,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/71S4Zxo0yrL._AC_UY218_.jpg
+AMD Ryzen 3 2200G,$101.55 USD,AMD,YD2200C5FBBOX,7.30E+11,7.30E+11,3.5 GHz,3.7 GHz,TRUE,4,4,65 W,AM4,Radeon RX Vega 8,https://m.media-amazon.com/images/I/81DdgQpbMqL._AC_UY218_.jpg
+AMD Ryzen 3 3100,$120.4 USD,AMD,100-100000284BOX,7.30E+11,,3.6 GHz,3.9 GHz,TRUE,4,8,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/71S4Zxo0yrL._AC_UY218_.jpg
+AMD Ryzen 3 3200G,$100.81 USD,AMD,YD3200C5FHBOX,7.30E+11,7.30E+11,3.6 GHz,4.0 GHz,TRUE,4,4,65 W,AM4,Radeon RX Vega 8,https://m.media-amazon.com/images/I/81DdgQpbMqL._AC_UY218_.jpg
+AMD Ryzen 3 4100,$86.86 USD,AMD,100-100000510BOX,7.30E+11,,3.8 GHz,4.0 GHz,TRUE,4,8,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/71S4Zxo0yrL._AC_UY218_.jpg
+AMD Ryzen 5 1400,$181.21 USD,AMD,YD1400BBAEBOX,7.30E+11,,3.2 GHz,3.4 GHz,TRUE,4,8,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 5 1500X,$148.04 USD,AMD,YD150XBBAEBOX,7.30E+11,,3.5 GHz,3.7 GHz,TRUE,4,8,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 5 1600,$129.64 USD,AMD,YD1600BBAEBOX,7.30E+11,7.30E+11,3.2 GHz,3.6 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51aCN2BHxjL._AC_UY218_.jpg
+AMD Ryzen 5 1600 AF,$197.32 USD,AMD,YD1600BBAFBOX,7.30E+11,,3.2 GHz,3.6 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 5 1600X,$256.26 USD,AMD,YD160XBCAEWOF,7.30E+11,,3.6 GHz,4.0 GHz,TRUE,6,12,95 W,AM4,FALSE,https://m.media-amazon.com/images/I/51aCN2BHxjL._AC_UY218_.jpg
+AMD Ryzen 5 2400G,$159.58 USD,AMD,YD2400C5FBBOX,7.30E+11,7.30E+11,3.6 GHz,3.9 GHz,TRUE,4,8,65 W,AM4,Radeon RX Vega 11,https://m.media-amazon.com/images/I/81ewjd+T6rL._AC_UY218_.jpg
+AMD Ryzen 5 2600,$181.34 USD,AMD,YD2600BBAFBOX,7.30E+11,7.30E+11,3.4 GHz,3.9 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 5 2600X,$217.11 USD,AMD,YD260XBCAFBOX,7.30E+11,7.30E+11,3.6 GHz,4.1 GHz,TRUE,6,12,95 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 5 3400G,$150.87 USD,AMD,YD3400C5FHBOX,7.30E+11,,3.7 GHz,4.2 GHz,TRUE,4,8,65 W,AM4,Radeon RX Vega 11,https://m.media-amazon.com/images/I/71rKDRYq77L._AC_UY218_.jpg
+AMD Ryzen 5 3600,$166.8 USD,AMD,100-100000031BOX,7.30E+11,7.30E+11,3.6 GHz,4.2 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/71Vsm4ohvML._AC_UY218_.jpg
+AMD Ryzen 5 3600X,$378.86 USD,AMD,100-100000022BOX,7.30E+11,7.30E+11,3.8 GHz,4.4 GHz,TRUE,6,12,95 W,AM4,FALSE,https://m.media-amazon.com/images/I/51sA0uneSGL._AC_UY218_.jpg
+AMD Ryzen 5 3600XT,$239.37 USD,AMD,100-100000281BOX,7.30E+11,,3.8 GHz,4.5 GHz,TRUE,6,12,95 W,AM4,FALSE,https://m.media-amazon.com/images/I/71u+mYxe+UL._AC_UY218_.jpg
+AMD Ryzen 5 4500,$126.93 USD,AMD,100-100000644BOX,7.30E+11,,3.6 GHz,4.1 GHz,TRUE,6,12,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51So7GoGvxL._AC_UY218_.jpg
+AMD Ryzen 7 1700,$363.77 USD,AMD,YD1700BBAEBOX,7.30E+11,7.30E+11,3.0 GHz,3.7 GHz,TRUE,8,16,65 W,AM4,FALSE,https://m.media-amazon.com/images/I/51gRv8z+K6L._AC_UY218_.jpg
+AMD Ryzen 7 1700X,$426.51 USD,AMD,YD170XBCAEWOF,7.30E+11,7.30E+11,3.4 GHz,3.8 GHz,TRUE,8,16,95 W,AM4,FALSE,https://m.media-amazon.com/images/I/61d5eSkfnpL._AC_UY218_.jpg

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Product Image -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_container"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#F5F5F5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ram" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Favorite Button -->
+        <ImageView
+            android:id="@+id/favorite_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_favorite_border_24"
+            android:padding="4dp"
+            android:alpha="0.7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/discount_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#FF5722"
+            app:layout_constraintTop_toTopOf="@id/image_container"
+            app:layout_constraintStart_toStartOf="@id/image_container"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/discount_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15% OFF"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                tools:text="25% OFF" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Brand Name -->
+        <TextView
+            android:id="@+id/brand_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Corsair"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="@id/image_container"
+            app:layout_constraintStart_toEndOf="@id/image_container"
+            app:layout_constraintEnd_toStartOf="@id/favorite_button"
+            tools:text="Kingston" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Vengeance LPX 16GB DDR4 3200MHz Memory Kit"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/brand_name"
+            app:layout_constraintStart_toStartOf="@id/brand_name"
+            app:layout_constraintEnd_toEndOf="@id/brand_name"
+            tools:text="HyperX Fury RGB 32GB DDR4 Gaming Memory" />
+
+        <!-- Specifications -->
+        <TextView
+            android:id="@+id/specifications"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="DDR4 • 3200MHz • 16GB • CL16 • 1.35V"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/product_name"
+            app:layout_constraintStart_toStartOf="@id/brand_name"
+            app:layout_constraintEnd_toEndOf="@id/brand_name"
+            tools:text="DDR5 • 5600MHz • 32GB • CL36 • RGB" />
+
+        <!-- Rating, Reviews and Stock Status Row -->
+        <LinearLayout
+            android:id="@+id/info_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/image_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Rating and Reviews -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/star_filled_drawable"
+                    android:tint="#FFA726" />
+
+                <TextView
+                    android:id="@+id/rating_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_marginStart="2dp"
+                    tools:text="4.8" />
+
+                <TextView
+                    android:id="@+id/reviews_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(124 reviews)"
+                    android:textSize="12sp"
+                    android:textColor="#999999"
+                    android:layout_marginStart="4dp"
+                    tools:text="(89 reviews)" />
+            </LinearLayout>
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Stock Status -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <View
+                    android:id="@+id/stock_indicator"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/circle_shape"
+                    android:backgroundTint="#4CAF50" />
+
+                <TextView
+                    android:id="@+id/stock_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Stock"
+                    android:textSize="12sp"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp"
+                    tools:text="Low Stock" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Features/Benefits -->
+        <TextView
+            android:id="@+id/features"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="• Low Profile Design • Heat Spreader • XMP 2.0 Support"
+            android:textSize="11sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/info_row"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="• RGB Lighting • Lifetime Warranty • AMD EXPO Certified" />
+
+        <!-- Price and Action Section -->
+        <LinearLayout
+            android:id="@+id/price_action_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/features"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Price Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/current_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$89.99"
+                        android:textSize="20sp"
+                        android:textColor="#1E3A8A"
+                        android:textStyle="bold"
+                        tools:text="$149.99" />
+
+                    <TextView
+                        android:id="@+id/original_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$105.99"
+                        android:textSize="14sp"
+                        android:textColor="#999999"
+                        android:layout_marginStart="8dp"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        tools:text="$199.99" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/savings_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save $16.00"
+                    android:textSize="12sp"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    tools:text="Save $50.00" />
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Compare Button -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/compare_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="#F5F5F5"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_compare_24"
+                        android:tint="#666666" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Add to Cart Button -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_to_cart_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#1E3A8A">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/cart_icon_drawable"
+                            android:tint="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add to Cart"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Strike through for original price when discounted -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/Ahmed-Ashraf24/Hardware-E-Shop.git
+	fetch = +refs/*:refs/*
+	mirror = true
