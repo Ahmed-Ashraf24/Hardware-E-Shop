@@ -13,6 +13,7 @@ import com.example.e_commerce.R
 import com.example.e_commerce.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+    //ww
     lateinit var binding:ActivityLoginBinding
     val loginViewModel=LoginViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
