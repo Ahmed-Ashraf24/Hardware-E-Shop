@@ -1,9 +1,14 @@
 package com.example.e_commerce.Presntation.Screens.Auth
 
+import android.animation.AnimatorInflater
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -33,9 +38,13 @@ class RegisterActivity : AppCompatActivity() {
         }
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnMale.isEnabled=true
-        binding.btnFemale.isEnabled= true
+
+        setupElevationToggleAnimation(binding.btnMale, this)
+        setupElevationToggleAnimation(binding.btnFemale, this)
+        binding.btnMale.isEnabled = true
+        binding.btnFemale.isEnabled = true
         setupListeners()
+
     }
     val signUpViewModel=SignUpViewModel()
     @RequiresApi(Build.VERSION_CODES.O)
@@ -119,7 +128,24 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+    @SuppressLint("ClickableViewAccessibility")
+    fun setupElevationToggleAnimation(button: Button, context: Context) {
+        var isElevated = false
 
+        button.setOnClickListener {
+            val animatorRes = if (isElevated) {
+                R.animator.button_elevation_release // back to normal
+            } else {
+                R.animator.button_elevation_press // elevate
+            }
+
+            val animator = AnimatorInflater.loadAnimator(context, animatorRes)
+            animator.setTarget(button)
+            animator.start()
+
+            isElevated = !isElevated // toggle state
+        }
+    }
     @RequiresApi(Build.VERSION_CODES.O)
     private suspend fun registerUser() {
         with(binding) {
@@ -156,7 +182,7 @@ class RegisterActivity : AppCompatActivity() {
                 result ->
                 result!!.fold(
                     onSuccess = {
-                        val intent=Intent(this@RegisterActivity, RegisterActivity::class.java)
+                        val intent=Intent(this@RegisterActivity, LoginActivity::class.java)
                         startActivity(intent)
                     },
                     onFailure = {

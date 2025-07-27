@@ -147,14 +147,15 @@
                 android:id="@+id/btnFemale"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:background="@drawable/gender_button_female"
                 android:drawableStart="@drawable/ic_female"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:stateListAnimator="@animator/button_elevation"
+                android:textAlignment="center"
+                android:stateListAnimator="@animator/button_elevation_press"
                 android:text="Female"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/female_button_text" />
 
             <!-- Male Button -->
             <androidx.appcompat.widget.AppCompatButton
@@ -165,9 +166,9 @@
                 android:drawableStart="@drawable/ic_male"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:stateListAnimator="@animator/button_elevation"
+                android:stateListAnimator="@animator/button_elevation_press"
                 android:text="Male"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/male_button_text" />
 
         </LinearLayout>
 
@@ -181,7 +182,7 @@
             android:background="@drawable/continue_button_background"
             android:elevation="4dp"
             android:fontFamily="sans-serif-medium"
-            android:stateListAnimator="@animator/button_elevation"
+            android:stateListAnimator="@animator/button_elevation_press"
             android:text="Continue"
             android:textColor="@android:color/white" />
 

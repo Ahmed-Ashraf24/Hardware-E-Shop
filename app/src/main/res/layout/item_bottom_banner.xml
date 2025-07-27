@@ -1,40 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:background="@drawable/gradient_ad"
-    android:padding="16dp">
+    android:layout_margin="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
 
-    <!-- Ad Image -->
-    <ImageView
-        android:id="@+id/ad_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@android:drawable/ic_menu_camera"
-        android:background="@drawable/circle_background" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient_rtx"
+        android:gravity="center_vertical">
 
-    <!-- Ad Text -->
-    <TextView
-        android:id="@+id/ad_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="C02 - Cable Multifunction"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        <!-- Text Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.65"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="12dp">
 
-    <!-- Shop Now Button -->
-    <Button
-        android:id="@+id/shop_now_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shop Now"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#000000" />
-</LinearLayout>
+            <TextView
+                android:id="@+id/ad_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RTX 4060"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/rtx_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Performance Graphics"
+                android:textColor="#E8F4FD"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/shop_now_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shop Now"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/shop_now_button_bg"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Image Section -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.35">
+
+            <ImageView
+                android:id="@+id/ad_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sqa1yji_u5ztv10gkeorxly2"
+                android:layout_margin="8dp" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

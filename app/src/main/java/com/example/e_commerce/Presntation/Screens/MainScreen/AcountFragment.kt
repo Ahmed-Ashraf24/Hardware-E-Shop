@@ -23,7 +23,7 @@ class AcountFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding:FragmentAcountBinding
+    lateinit var binding: FragmentAcountBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,23 +37,40 @@ class AcountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=FragmentAcountBinding.inflate(layoutInflater)
+        binding = FragmentAcountBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val activityInstance=(activity as? MainScreen)
-        binding.tvUserName.text=activityInstance!!.user!!.name
-        binding.tvPhoneNumber.text=activityInstance!!.user!!.phone
-        binding.tvAddress.text=activityInstance!!.user!!.address
-        binding.tvUserEmail.text=activityInstance.user!!.email
+        val activityInstance = (activity as? MainScreen)
+        binding.tvUserName.text = activityInstance!!.user!!.name
+        binding.tvPhoneNumber.text = activityInstance!!.user!!.phone
+        binding.tvAddress.text = activityInstance!!.user!!.address
+        binding.tvUserEmail.text = activityInstance.user!!.email
         binding.btnLogout.setOnClickListener {
-            val intent= Intent(requireContext(),LoginActivity::class.java)
+            val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
         }
-        binding.tvTotalOrders.text=activityInstance.orderViewModel.orderedProductList.value!!.size.toString()
-        binding.tvCartItems.text=activityInstance.cartViewModel.cartProductList.value!!.size.toString()
+        if (activityInstance.orderViewModel.orderedProductList.value == null ||
+            activityInstance.cartViewModel.cartProductList.value == null
+        ) {
+            activityInstance.orderViewModel.getOrderedProducts(activityInstance.user!!)
+            activityInstance.cartViewModel.getCartProducts(activityInstance.user!!)
+            activityInstance.orderViewModel.orderedProductList.observe(viewLifecycleOwner){productlist->
+                binding.tvTotalOrders.text =productlist.size.toString()
 
+            }
+            activityInstance.cartViewModel.cartProductList.observe(viewLifecycleOwner){productlist->
+                binding.tvCartItems.text =productlist.size.toString()
+
+            }
+
+        } else {
+            binding.tvTotalOrders.text =
+                activityInstance.orderViewModel.orderedProductList.value!!.size.toString()
+            binding.tvCartItems.text =
+                activityInstance.cartViewModel.cartProductList.value!!.size.toString()
+        }
 
     }
 

@@ -12,6 +12,7 @@ class ProductMapper {
                 category = product.category,
                 price = product.price,
                 imageURL = product.imageUrl,
+                brand=product.brand,
                 description = product.description,
                 rating = "5")
         }

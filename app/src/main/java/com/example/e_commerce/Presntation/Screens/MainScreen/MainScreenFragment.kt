@@ -71,12 +71,11 @@ class MainScreenFragment : Fragment() {
             adapter = BannerAdapter(banners)
         }
 
-
+        binding.searchBar.setOnClickListener { parentFragmentManager.beginTransaction().replace(R.id.fragment_container,SearchFragment()).commit() }
 
         activityInstnance!!.productsViwModel.productList.observe(viewLifecycleOwner) { productList ->
 
 
-            Log.d("there is data", productList.toString())
             binding.productsRecycler.apply {
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 adapter = ProductAdapter(

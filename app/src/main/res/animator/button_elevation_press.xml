@@ -1,0 +1,7 @@
+<!-- File: res/animator/button_elevation.xml -->
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:propertyName="translationZ"
+    android:duration="100"
+    android:valueFrom="4dp"
+    android:valueTo="8dp"
+    android:valueType="floatType" />

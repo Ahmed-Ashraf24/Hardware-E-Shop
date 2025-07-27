@@ -15,7 +15,7 @@ class BottomBannerAdapter(private val bottomBanners: List<BottomBanner>) :
     class BottomBannerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val adImage: ImageView = itemView.findViewById(R.id.ad_image)
         val adText: TextView = itemView.findViewById(R.id.ad_text)
-        val shopNowButton: Button = itemView.findViewById(R.id.shop_now_button)
+        val shopNowButton: TextView = itemView.findViewById(R.id.shop_now_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BottomBannerViewHolder {

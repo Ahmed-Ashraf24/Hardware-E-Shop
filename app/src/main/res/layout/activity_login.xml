@@ -80,7 +80,7 @@
             android:background="@drawable/continue_button_background"
             android:elevation="4dp"
             android:fontFamily="sans-serif-medium"
-            android:stateListAnimator="@animator/button_elevation"
+            android:stateListAnimator="@animator/button_elevation_press"
             android:text="Sign In"
             android:textColor="@android:color/white" />
 
