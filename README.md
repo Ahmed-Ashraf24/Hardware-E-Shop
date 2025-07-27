@@ -53,7 +53,7 @@ A modern E-Commerce Android app built with **Kotlin**, structured using **MVVM**
 
 ### 💳 Payment Screens
 <p float="left">
-   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/payment1.png?raw=true" width="250" />
+   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/payyment1.png?raw=true" width="250" />
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/payment2.png?raw=true" width="250" />
 </p>
 
