@@ -38,7 +38,11 @@ A modern E-Commerce Android app built with **Kotlin**, structured using **MVVM**
 ### 🏠 Home & Product Pages
 <p float="left">
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/home.png?raw=true" width="250" />
+   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/home2.png?raw=true" width="250" />
+
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage1.png?raw=true" width="250" />
+   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage2.png?raw=true" width="250" />
+
 </p>
 
 ### 🛒 Cart & Order Pages
@@ -61,7 +65,7 @@ A modern E-Commerce Android app built with **Kotlin**, structured using **MVVM**
 
 ### 👤 Profile Pages
 <p float="left">
-   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/profile1.png?raw=true" width="250" />
+   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/profile%201.png?raw=true" width="250" />
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/profile2.png?raw=true" width="250" />
 </p>
 
