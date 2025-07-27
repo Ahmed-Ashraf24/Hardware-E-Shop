@@ -40,7 +40,7 @@ A modern E-Commerce Android app built with **Kotlin**, structured using **MVVM**
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/home.png?raw=true" width="250" />
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/home2.png?raw=true" width="250" />
 
-   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage1.png?raw=true" width="250" />
+   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage.png?raw=true" width="250" />
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage2.png?raw=true" width="250" />
 
 </p>
