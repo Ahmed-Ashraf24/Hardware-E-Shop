@@ -23,7 +23,7 @@ class LocalDatabase : DatabaseClient {
         val user = databaseInstance.userDao().getUserByEmail(email) ?: return null
 
         val hashedPassword = PasswordUtilities.hashPassword(password, user.passwordSalt)
-        return user.takeIf { it.hashPassword==hashedPassword }
+        return user.takeIf { it.hashPassword == hashedPassword }
 
     }
 
@@ -32,13 +32,24 @@ class LocalDatabase : DatabaseClient {
         databaseInstance.userDao().addUser(user)
     }
 
+    override suspend fun editUserInfo(
+        userId: Int,
+        name: String,
+        email: String,
+        address: String?,
+        phoneNumber: String?
+    ) {
+        databaseInstance.userDao().updateUserInfo(userId, name, email, address, phoneNumber)
+    }
+
+    override suspend fun changeUserPassword(userId: Int,userHashPassword:String,userPasswordSalt:String) {
+        databaseInstance.userDao().updateUserPassword(userId,userHashPassword,userPasswordSalt)
+    }
+
     @SuppressLint("SuspiciousIndentation")
     override suspend fun getAllProducts(): List<ProductEntity> {
-        val data = databaseInstance.productDao().getAllProducts()
-        data.forEach {
-            Log.d("data from Local DataBase", it.toString())
-        }
-        return data
+        val products = databaseInstance.productDao().getAllProducts()
+        return products
     }
 
     override suspend fun addProduct(product: ProductEntity) {

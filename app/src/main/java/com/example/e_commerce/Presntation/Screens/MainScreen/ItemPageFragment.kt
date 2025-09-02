@@ -60,7 +60,7 @@ lateinit var binding:FragmentItemPageBinding
         }
         binding.cartButton.setOnClickListener {
             Log.d("item page","button was clicked")
-            activityInstance.cartViewModel.addToCart(1,product.id,1)
+            activityInstance.cartViewModel.addToCart(userId = activityInstance.user!!.id, productId = product.id, quantity = 1)
         }
     }
 

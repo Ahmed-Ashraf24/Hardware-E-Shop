@@ -5,12 +5,17 @@ import com.example.e_commerce.Data.Model.DatabaseModel.UserEntity
 import com.example.e_commerce.Domain.Entity.Product
 
 interface DatabaseClient {
- suspend fun getUserFromEmailAndPassword(email:String,password:String): UserEntity?
- suspend fun addUser(user: UserEntity)
- suspend fun getAllProducts():List<ProductEntity>
- suspend fun addProduct(product: ProductEntity)
- suspend fun addOrderedProduct(productId:Int,userId:Int)
- suspend fun addToCart(productId: Int, userId:Int, quantity:Int=1)
- suspend fun getCartProducts(userId:Int):List<ProductEntity>
- suspend fun getOrderedProducts(userId:Int):List<Product>
+    suspend fun getUserFromEmailAndPassword(email: String, password: String): UserEntity?
+    suspend fun addUser(user: UserEntity)
+    suspend fun editUserInfo(
+        userId: Int, name: String, email: String, address: String?, phoneNumber: String?
+    )
+
+    suspend fun changeUserPassword(userId: Int, userHashPassword: String, userPasswordSalt: String)
+    suspend fun getAllProducts(): List<ProductEntity>
+    suspend fun addProduct(product: ProductEntity)
+    suspend fun addOrderedProduct(productId: Int, userId: Int)
+    suspend fun addToCart(productId: Int, userId: Int, quantity: Int = 1)
+    suspend fun getCartProducts(userId: Int): List<ProductEntity>
+    suspend fun getOrderedProducts(userId: Int): List<Product>
 }

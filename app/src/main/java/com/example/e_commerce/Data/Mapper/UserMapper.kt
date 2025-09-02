@@ -10,7 +10,9 @@ class UserMapper {
                 id=user.id,
                 email = user.email,
                 phone = user.phoneNumber!!,
-                address = user.address!!)
+                address = user.address!!,
+                gender=user.gender
+                )
         }
     }
 }
