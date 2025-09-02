@@ -40,7 +40,7 @@ A modern E-Commerce Android app built with **Kotlin**, structured using **MVVM**
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/home.png?raw=true" width="250" />
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/home2.png?raw=true" width="250" />
 
-   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage1.png?raw=true" width="250" />
+   <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage.png?raw=true" width="250" />
    <img src="https://github.com/Ahmed-Ashraf24/Hardware-E-Shop/blob/main/app/src/main/res/screens/itempage2.png?raw=true" width="250" />
 
 </p>
@@ -76,16 +76,23 @@ A modern E-Commerce Android app built with **Kotlin**, structured using **MVVM**
 📦 data
 
 ┣ 📂 local # Room DB and DAO
+
 ┣ 📂 remote # Retrofit API services
+
 ┣ 📂 repository # Implementation of repositories
 
 📦 domain
+
 ┣ 📂 model # Business models
+
 ┣ 📂 usecase # Business logic (use cases)
 
 📦 presentation
+
 ┣ 📂 viewmodels # ViewModel classes for UI logic
+
 ┣ 📂 ui # Activities, Fragments, Adapters, etc.
+
 
 ---
 
