@@ -2,10 +2,12 @@ package com.example.e_commerce.Presntation.Screens.MainScreen
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import com.example.e_commerce.Data.Repository.UserRepoImp
 import com.example.e_commerce.Domain.Entity.User
 import com.example.e_commerce.Domain.UseCase.UserUseCase
@@ -29,6 +31,8 @@ class AcountFragment : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentAcountBinding
     private val userViewModel= UserViewModel(UserUseCase(UserRepoImp()))
+    private val user:User?
+        get()=(activity as? MainScreen)?.user
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -47,16 +51,15 @@ class AcountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val activityInstance = (activity as? MainScreen)
-        binding.tvUserName.text = activityInstance!!.user!!.name
-        binding.tvPhoneNumber.text = activityInstance!!.user!!.phone
-        binding.tvAddress.text = activityInstance!!.user!!.address
-        binding.tvUserEmail.text = activityInstance.user!!.email
+
+        setupUserData(user)
         binding.btnLogout.setOnClickListener {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
         }
-        val (userId,userName,userEmail,userAddress,userPhone,userGender)=activityInstance.user!!
         binding.btnEditProfile.setOnClickListener {
+            val (userId,userName,userEmail,userAddress,userPhone,userGender)=activityInstance!!.user!!
+
             val dialog=EditProfileDialogFragment.newInstance(
                userName,userEmail,userPhone,userAddress,userGender
             )
@@ -69,16 +72,22 @@ class AcountFragment : Fragment() {
                         address: String,
                         gender: String
                     ) {
-                        userViewModel.loadUser(activityInstance.user!!)
-                        userViewModel.updateUser(User(activityInstance.user!!.id,name,email,address,phone,gender))
+                        userViewModel.loadUser(user!!)
+                        userViewModel.updateUser(User(user!!.id,name,email,address,phone,gender))
+
+                        Log.d("user data after editing it from acount fragment",user.toString())
                     }
 
                 })
             }
+            userViewModel.user.observe(viewLifecycleOwner){user->
+                setupUserData(user)
+            activityInstance.user=user
+            }
             dialog.show(parentFragmentManager, "EditProfileDialog")
 
         }
-        if (activityInstance.orderViewModel.orderedProductList.value == null ||
+        if (activityInstance!!.orderViewModel.orderedProductList.value == null ||
             activityInstance.cartViewModel.cartProductList.value == null
         ) {
             activityInstance.orderViewModel.getOrderedProducts(activityInstance.user!!)
@@ -100,6 +109,13 @@ class AcountFragment : Fragment() {
         }
 
 
+    }
+
+    private fun setupUserData(user: User?) {
+        binding.tvUserName.text = user?.name
+        binding.tvPhoneNumber.text = user?.phone
+        binding.tvAddress.text = user?.address
+        binding.tvUserEmail.text = user?.email
     }
 
     companion object {

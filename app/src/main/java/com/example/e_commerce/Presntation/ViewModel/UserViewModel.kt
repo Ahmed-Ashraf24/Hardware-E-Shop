@@ -1,5 +1,6 @@
 package com.example.e_commerce.Presntation.ViewModel
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,9 +21,10 @@ class UserViewModel(
         _user.value = user
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun updateUser(user: User) {
         viewModelScope.launch {
-          val  (userId,userName,userEmail,userAddress,userPhone,userGender)=user
+          val (userId,userName,userEmail,userAddress,userPhone,userGender)=user
             updateUserProfileUseCase.editUserInfo(userId,userName,userEmail,userAddress,userPhone)
             _user.value = user
         }

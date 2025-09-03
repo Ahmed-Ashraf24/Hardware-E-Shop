@@ -114,20 +114,20 @@ class EditProfileDialogFragment : DialogFragment() {
     private fun validateInputs(): Boolean {
         var isValid = true
 
-        // Clear previous errors
+
         binding.tilName.error = null
         binding.tilEmail.error = null
         binding.tilPhone.error = null
         binding.tilAddress.error = null
         binding.tilGender.error = null
 
-        // Validate name
+
         if (binding.etName.text.toString().trim().isEmpty()) {
             binding.tilName.error = "Name is required"
             isValid = false
         }
 
-        // Validate email
+
         val email = binding.etEmail.text.toString().trim()
         if (email.isEmpty()) {
             binding.tilEmail.error = "Email is required"
