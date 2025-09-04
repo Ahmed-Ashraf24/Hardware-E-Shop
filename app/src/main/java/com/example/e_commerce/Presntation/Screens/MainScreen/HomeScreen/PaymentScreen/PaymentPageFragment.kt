@@ -1,4 +1,4 @@
-package com.example.e_commerce.Presntation.Screens.MainScreen
+package com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.PaymentScreen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.e_commerce.Data.DataSource.StripePaymentMethod
 import com.example.e_commerce.Domain.Entity.Card
-import com.example.e_commerce.Presntation.ViewModel.OrderViewModel
+import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
 import com.example.e_commerce.Presntation.ViewModel.PaymentViewModel
 import com.example.e_commerce.databinding.FragmentPaymentPageBinding
 import com.stripe.android.Stripe

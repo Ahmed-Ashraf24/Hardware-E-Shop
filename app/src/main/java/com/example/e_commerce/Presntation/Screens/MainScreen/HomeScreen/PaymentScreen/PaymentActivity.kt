@@ -1,16 +1,14 @@
-package com.example.e_commerce.Presntation.Screens.MainScreen
+package com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.PaymentScreen
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.room.Index
 import com.bumptech.glide.Glide
 import com.example.e_commerce.Data.DataSource.StripePaymentMethod
 import com.example.e_commerce.Domain.Entity.Card
 import com.example.e_commerce.Domain.Entity.Product
-import com.example.e_commerce.Presntation.ViewModel.OrderViewModel
 import com.example.e_commerce.Presntation.ViewModel.PaymentViewModel
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.ActivityPaymentBinding

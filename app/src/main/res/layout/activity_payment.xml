@@ -8,7 +8,7 @@
 
     android:background="#F5F5F5"
     android:padding="16dp"
-    tools:context=".Presntation.Screens.MainScreen.PaymentActivity">
+    tools:context=".Presntation.Screens.MainScreen.HomeScreen.PaymentScreen.PaymentActivity">
 
 
     <LinearLayout

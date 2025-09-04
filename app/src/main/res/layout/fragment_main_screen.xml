@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F8FAFC"
-    tools:context=".Presntation.Screens.MainScreen.MainScreenFragment">
+    tools:context=".Presntation.Screens.MainScreen.HomeScreen.HomePage.MainScreenFragment">
 
     <ScrollView
         android:layout_width="0dp"

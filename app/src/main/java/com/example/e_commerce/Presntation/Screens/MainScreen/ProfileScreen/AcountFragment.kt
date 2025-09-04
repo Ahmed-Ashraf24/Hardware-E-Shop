@@ -1,4 +1,4 @@
-package com.example.e_commerce.Presntation.Screens.MainScreen
+package com.example.e_commerce.Presntation.Screens.MainScreen.ProfileScreen
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
 import com.example.e_commerce.Data.Repository.UserRepoImp
 import com.example.e_commerce.Domain.Entity.User
 import com.example.e_commerce.Domain.UseCase.UserUseCase
 import com.example.e_commerce.Presntation.Screens.Auth.LoginActivity
+import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
 import com.example.e_commerce.Presntation.ViewModel.UserViewModel
-import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentAcountBinding
 
 
@@ -60,11 +59,12 @@ class AcountFragment : Fragment() {
         binding.btnEditProfile.setOnClickListener {
             val (userId,userName,userEmail,userAddress,userPhone,userGender)=activityInstance!!.user!!
 
-            val dialog=EditProfileDialogFragment.newInstance(
-               userName,userEmail,userPhone,userAddress,userGender
+            val dialog= EditProfileDialogFragment.newInstance(
+                userName, userEmail, userPhone, userAddress, userGender
             )
             dialog.apply {
-                setOnProfileUpdateListener(object:EditProfileDialogFragment.OnProfileUpdateListener{
+                setOnProfileUpdateListener(object:
+                    EditProfileDialogFragment.OnProfileUpdateListener {
                     override fun onProfileUpdated(
                         name: String,
                         email: String,

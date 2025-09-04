@@ -1,12 +1,15 @@
-package com.example.e_commerce.Presntation.Screens.MainScreen
+package com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.HomePage
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.ItemPage.ItemPageFragment
+import com.example.e_commerce.Presntation.Screens.MainScreen.Search.ItemsDisplayFragment
+import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
+import com.example.e_commerce.Presntation.Screens.MainScreen.Search.SearchFragment
 import com.example.e_commerce.R
 import com.example.e_commerce.Utilities.UIModule.Banner
 import com.example.e_commerce.Utilities.UIModule.BottomBanner
@@ -71,7 +74,9 @@ class MainScreenFragment : Fragment() {
             adapter = BannerAdapter(banners)
         }
 
-        binding.searchBar.setOnClickListener { parentFragmentManager.beginTransaction().replace(R.id.fragment_container,SearchFragment()).commit() }
+        binding.searchBar.setOnClickListener { parentFragmentManager.beginTransaction().replace(R.id.fragment_container,
+            SearchFragment()
+        ).commit() }
 
         activityInstnance!!.productsViwModel.productList.observe(viewLifecycleOwner) { productList ->
 
@@ -108,7 +113,9 @@ class MainScreenFragment : Fragment() {
         }
         binding.processorFilter.setOnClickListener {
             activityInstnance.selectedCategory="CPU"
-            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,ItemsDisplayFragment())
+            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                ItemsDisplayFragment()
+            )
                 .commit()
         }
         super.onViewCreated(view, savedInstanceState)

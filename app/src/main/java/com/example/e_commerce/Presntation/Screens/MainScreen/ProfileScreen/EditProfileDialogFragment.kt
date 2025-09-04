@@ -1,15 +1,12 @@
-package com.example.e_commerce.Presntation.Screens.MainScreen
+package com.example.e_commerce.Presntation.Screens.MainScreen.ProfileScreen
 
 import android.R
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import androidx.viewbinding.ViewBinding
 import  com.example.e_commerce.databinding.DialogEditProfileBinding
 
 class EditProfileDialogFragment : DialogFragment() {

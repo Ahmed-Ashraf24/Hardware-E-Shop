@@ -7,6 +7,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.e_commerce.Domain.Entity.Product
 import com.example.e_commerce.Domain.Entity.User
+import com.example.e_commerce.Presntation.Screens.MainScreen.CartScreen.CartFragment
+import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.HomePage.MainScreenFragment
+import com.example.e_commerce.Presntation.Screens.MainScreen.OrderScreen.OrderFragment
+import com.example.e_commerce.Presntation.Screens.MainScreen.ProfileScreen.AcountFragment
 import com.example.e_commerce.Presntation.ViewModel.CartViewModel
 import com.example.e_commerce.Presntation.ViewModel.OrderViewModel
 import com.example.e_commerce.Presntation.ViewModel.ProductsViwModel
