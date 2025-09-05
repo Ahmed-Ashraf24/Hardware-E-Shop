@@ -1,12 +1,14 @@
 package com.example.e_commerce.Presntation.Screens.MainScreen.ProfileScreen
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import com.example.e_commerce.Data.Repository.UserRepoImp
 import com.example.e_commerce.Domain.Entity.User
 import com.example.e_commerce.Domain.UseCase.UserUseCase
@@ -56,6 +58,7 @@ class AcountFragment : Fragment() {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
         }
+
         binding.btnEditProfile.setOnClickListener {
             val (userId,userName,userEmail,userAddress,userPhone,userGender)=activityInstance!!.user!!
 
@@ -86,6 +89,19 @@ class AcountFragment : Fragment() {
             }
             dialog.show(parentFragmentManager, "EditProfileDialog")
 
+        }
+        binding.btnChangePassword.setOnClickListener {
+            val dialog=ChangePasswordDialogFragment.newInstance()
+            dialog.apply {
+                setOnPasswordChangeListener(object :ChangePasswordDialogFragment.OnPasswordChangeListener{
+                    @RequiresApi(Build.VERSION_CODES.O)
+                    override fun onPasswordChanged(currentPassword: String, newPassword: String) {
+                        userViewModel.changePassword(activityInstance!!.user!!.id,newPassword)
+                    }
+
+                })
+            }
+            dialog.show(parentFragmentManager,"changePasswordDialog")
         }
         if (activityInstance!!.orderViewModel.orderedProductList.value == null ||
             activityInstance.cartViewModel.cartProductList.value == null
