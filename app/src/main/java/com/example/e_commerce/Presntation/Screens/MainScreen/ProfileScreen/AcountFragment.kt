@@ -57,6 +57,7 @@ class AcountFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
+            activityInstance!!.finish()
         }
 
         binding.btnEditProfile.setOnClickListener {

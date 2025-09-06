@@ -37,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
                               putExtra("user",user)
                           }
                           startActivity(intent)
+                          this.finish()
                       },
                       onFailure = {exception ->
                           Toast.makeText(this,exception.message,Toast.LENGTH_SHORT).show()
