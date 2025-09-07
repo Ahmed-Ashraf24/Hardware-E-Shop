@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.HomePage.MainScreenFragment
 import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
+import com.example.e_commerce.R
 import com.example.e_commerce.Utilities.UiAdapters.FilteredProductsAdapter
 import com.example.e_commerce.databinding.FragmentItemsDisplayBinding
 
@@ -56,6 +58,9 @@ class ItemsDisplayFragment : Fragment() {
                        activityInstance.cartViewModel.addToCart(activityInstance.user!!.id, productId =product.id,1)} )
             }
 
+        }
+        binding.backButton.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,MainScreenFragment()).commit()
         }
     }
 

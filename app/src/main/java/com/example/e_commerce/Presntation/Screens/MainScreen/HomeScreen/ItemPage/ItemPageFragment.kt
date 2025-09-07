@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.HomePage.MainScreenFragment
 import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
 import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.PaymentScreen.PaymentPageFragment
 import com.example.e_commerce.R
@@ -62,6 +63,11 @@ lateinit var binding:FragmentItemPageBinding
         binding.cartButton.setOnClickListener {
             Log.d("item page","button was clicked")
             activityInstance.cartViewModel.addToCart(userId = activityInstance.user!!.id, productId = product.id, quantity = 1)
+        }
+        binding.backButton.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                MainScreenFragment()
+            ).commit()
         }
     }
 

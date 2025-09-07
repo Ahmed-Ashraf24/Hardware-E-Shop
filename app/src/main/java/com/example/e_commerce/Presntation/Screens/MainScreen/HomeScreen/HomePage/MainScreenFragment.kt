@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.ItemPage.ItemPageFragment
 import com.example.e_commerce.Presntation.Screens.MainScreen.Search.ItemsDisplayFragment
@@ -13,8 +14,10 @@ import com.example.e_commerce.Presntation.Screens.MainScreen.Search.SearchFragme
 import com.example.e_commerce.R
 import com.example.e_commerce.Utilities.UIModule.Banner
 import com.example.e_commerce.Utilities.UIModule.BottomBanner
+import com.example.e_commerce.Utilities.UIModule.Category
 import com.example.e_commerce.Utilities.UiAdapters.BannerAdapter
 import com.example.e_commerce.Utilities.UiAdapters.BottomBannerAdapter
+import com.example.e_commerce.Utilities.UiAdapters.CategoriesAdapter
 import com.example.e_commerce.Utilities.UiAdapters.ProductAdapter
 import com.example.e_commerce.databinding.FragmentMainScreenBinding
 
@@ -34,6 +37,38 @@ class MainScreenFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private val categoriesData= listOf(
+        Category(
+            id = "ram",
+            name = "RAM",
+            iconRes = R.drawable.ram,
+            backgroundColor = "#E8F5E8"
+        ),
+        Category(
+            id = "ssd",
+            name = "SSD",
+            iconRes = R.drawable.ssd_drive,
+            backgroundColor = "#FFE8E8"
+        ),
+        Category(
+            id = "hd",
+            name = "HDD",
+            iconRes = R.drawable.hard_disk,
+            backgroundColor = "#FFF8E8"
+        ),
+        Category(
+            id = "cpu",
+            name = "CPU",
+            iconRes = R.drawable.processor,
+            backgroundColor = "#E8E8FF"
+        ),
+        Category(
+            id = "case",
+            name = "Case",
+            iconRes = R.drawable.computer_case,
+            backgroundColor = "#E8FFE8"
+        )
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,13 +146,15 @@ class MainScreenFragment : Fragment() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = BottomBannerAdapter(bottomBanners)
         }
-        binding.processorFilter.setOnClickListener {
-            activityInstnance.selectedCategory="CPU"
-            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                ItemsDisplayFragment()
-            )
-                .commit()
-        }
+
+       binding.categoriesRecycler.apply {
+           layoutManager =  GridLayoutManager(requireContext(), 5)
+           adapter=CategoriesAdapter(categoriesData){selectedCategory->
+               activityInstnance.selectedCategory=selectedCategory.name
+               parentFragmentManager.beginTransaction()
+                   .replace(R.id.fragment_container, ItemsDisplayFragment()).commit()
+           }
+       }
         super.onViewCreated(view, savedInstanceState)
     }
 
