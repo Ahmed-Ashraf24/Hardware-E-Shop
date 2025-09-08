@@ -26,6 +26,7 @@ class CartFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var binding:FragmentCartBinding
+    private var totalItemsSubCount =0f
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -48,8 +49,22 @@ class CartFragment : Fragment() {
       activityInstance!!.cartViewModel.getCartProducts(user = activityInstance.user!!)
         Log.d("Cart Data from cart Fragment",activityInstance.cartViewModel.cartProductList.value.toString())
         activityInstance.cartViewModel.cartProductList.observe(viewLifecycleOwner){productList->
-            binding.favouritesRecyclerView.adapter=CartAdapter(cartList = productList)
+            productList.forEach { product->
+                totalItemsSubCount+=product.price
+                binding.subtotalAmount.text=totalItemsSubCount.toString()
+
+            }
+            binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
+
+            val adapter=CartAdapter(cartList = productList){price->
+                totalItemsSubCount+=price
+                binding.subtotalAmount.text=totalItemsSubCount.toString()
+                binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
+            }
+
+            binding.favouritesRecyclerView.adapter=adapter
         }
+
 
     }
 

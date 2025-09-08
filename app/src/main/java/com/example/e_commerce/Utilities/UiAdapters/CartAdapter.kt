@@ -12,8 +12,9 @@ import com.bumptech.glide.Glide
 import com.example.e_commerce.Domain.Entity.Product
 import com.example.e_commerce.R
 
-class CartAdapter(private val cartList: List<Product>) :
+class CartAdapter(private val cartList: List<Product>,val onQuantityChanged:(Float)->(Unit)) :
     RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+        var cartItemTotalPrice=0f
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val productImage: ImageView = itemView.findViewById(R.id.product_image)
         val productName: TextView = itemView.findViewById(R.id.product_name)
@@ -59,6 +60,7 @@ class CartAdapter(private val cartList: List<Product>) :
                     .toString()
                 this.quantity++
                 this.totalPriceTextView.text = product.price.times(quantity).toString()
+                onQuantityChanged(product.price)
 
             }
 
@@ -75,7 +77,7 @@ class CartAdapter(private val cartList: List<Product>) :
                         .toString()
                 this.quantity--
                 this.totalPriceTextView.text= product.price.times(quantity).toString()
-
+                onQuantityChanged(-product.price)
             }
 
         }
@@ -83,4 +85,5 @@ class CartAdapter(private val cartList: List<Product>) :
 
 
     }
+
 }
