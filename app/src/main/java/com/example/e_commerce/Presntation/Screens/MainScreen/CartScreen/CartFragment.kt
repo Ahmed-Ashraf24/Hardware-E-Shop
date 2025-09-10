@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.PaymentScreen.PaymentPageFragment
 import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
+import com.example.e_commerce.R
+import com.example.e_commerce.Utilities.UIModule.CartItem
 import com.example.e_commerce.Utilities.UiAdapters.CartAdapter
 import com.example.e_commerce.databinding.FragmentCartBinding
 
@@ -27,6 +30,7 @@ class CartFragment : Fragment() {
     private var param2: String? = null
     lateinit var binding:FragmentCartBinding
     private var totalItemsSubCount =0f
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -56,13 +60,18 @@ class CartFragment : Fragment() {
             }
             binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
 
-            val adapter=CartAdapter(cartList = productList){price->
+            val adapter=CartAdapter(cartList = productList.map { CartItem(it,1) }){price->
                 totalItemsSubCount+=price
                 binding.subtotalAmount.text=totalItemsSubCount.toString()
                 binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
             }
 
             binding.favouritesRecyclerView.adapter=adapter
+
+        }
+        binding.orderAllButton.setOnClickListener {
+       val cartList= (binding.favouritesRecyclerView.adapter as CartAdapter).getCartListProducts()
+        parentFragmentManager.beginTransaction().replace(R.id.fragment_container,PaymentPageFragment(cartList,totalItemsSubCount.toDouble())).commit()
         }
 
 
