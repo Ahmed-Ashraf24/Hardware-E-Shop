@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_commerce.Data.DataSource.StripePaymentMethod
 import com.example.e_commerce.Domain.Entity.Card
+import com.example.e_commerce.Domain.Entity.Product
 import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
 import com.example.e_commerce.Presntation.ViewModel.PaymentViewModel
+import com.example.e_commerce.Utilities.UIModule.CartItem
+import com.example.e_commerce.Utilities.UiAdapters.PaymentItemAdapter
 import com.example.e_commerce.databinding.FragmentPaymentPageBinding
 import com.stripe.android.Stripe
 import com.stripe.android.model.ConfirmPaymentIntentParams
@@ -25,7 +28,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [PaymentPageFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PaymentPageFragment : Fragment() {
+class PaymentPageFragment(val listOfItems:List<CartItem>,val price:Double) : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -50,19 +53,18 @@ class PaymentPageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val activityInstance=(activity as? MainScreen)
-        val product=activityInstance!!.product
-        val user=activityInstance.user
+        val user=activityInstance!!.user
         val orderViewModel= activityInstance.orderViewModel
+        var cardList= mutableListOf<CartItem>()
+        cardList.addAll(
+            listOfItems
+        )
+        binding.itemCount.text= listOfItems.size.toString()+" items"
+        binding.productsRecyclerView.layoutManager= LinearLayoutManager(requireContext())
+        binding.productsRecyclerView.adapter=PaymentItemAdapter(requireContext(),cardList)
 
-        Glide.with(this)
-            .load(product!!.imageURL)
-            .into(binding.productImage)
-        binding.productName.text=product.name
-        binding.productPrice.text="${product.price}$ USD"
-        binding.totalCost.text="${product.price}$ USD"
 
-        val pk="pk_test_51R5Rl0RpAzDeym7cVTvgXPngjLQj9znwwycouRFERAbjLehwqOJHK30YC4licTEf13BmUjQToTSjz4UKv2hp2dnu008ZM4R3V0"
-
+        val pk="API_PK"
         val stripe= Stripe(requireContext(),pk)
         binding.payButton.setOnClickListener {
             val cardNumber=binding.cardNumber.text.toString()
@@ -72,8 +74,9 @@ class PaymentPageFragment : Fragment() {
             val cardCvc=binding.cvc.text.toString()
             val userEmail=activityInstance.user!!.email
             val card= Card(number =cardNumber, expYear = cardExpYear, expMonth = cardExpMon, cvc = cardCvc )
-            paymentViewModel.makePayment(userEmail = userEmail!!, userName = userName, card = card, amount = product.price.toDouble())
+            paymentViewModel.makePayment(userEmail = userEmail!!, userName = userName, card = card, amount = price)
         }
+        binding.totalCost.text=price.toString()
         paymentViewModel.paymentStatus.observe(viewLifecycleOwner){pair->
             if(pair.first){
                 stripe.confirmPayment(this,
@@ -81,7 +84,10 @@ class PaymentPageFragment : Fragment() {
                         paymentMethodId = pair.second.paymentMethodId
                     )
                 )
-                orderViewModel.addToOrderedProducts(userId =user!!.id, productId = product.id)
+                listOfItems.forEach { cartItem ->
+                    orderViewModel.addToOrderedProducts(userId =user!!.id, productId = cartItem.product.id)
+
+                }
 
                 Toast.makeText(requireContext(),"the transaction completed", Toast.LENGTH_LONG).show()
             }
@@ -92,23 +98,5 @@ class PaymentPageFragment : Fragment() {
         }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PaymentPageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PaymentPageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

@@ -4,11 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="#F5F5F5"
-    android:padding="16dp"
->
-
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,6 +62,7 @@
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
 
+        <!-- Payment Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,7 +110,6 @@
                 android:foregroundTint="#1A1A1A"
                 app:boxStrokeColor="#1A1A1A"
                 app:hintTextColor="#1A1A1A"
-
                 android:textColor="#1A1A1A"
                 android:layout_marginTop="8dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -123,7 +120,6 @@
                     android:foregroundTint="#1A1A1A"
                     app:boxStrokeColor="#1A1A1A"
                     app:hintTextColor="#1A1A1A"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
@@ -137,7 +133,6 @@
                 android:foregroundTint="#1A1A1A"
                 app:boxStrokeColor="#1A1A1A"
                 app:hintTextColor="#1A1A1A"
-
                 android:hint="Card Number"
                 android:layout_marginTop="8dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -151,7 +146,6 @@
                     android:foregroundTint="#1A1A1A"
                     app:boxStrokeColor="#1A1A1A"
                     app:hintTextColor="#1A1A1A"
-
                     android:maxLength="16"
                     android:drawableEnd="@drawable/baseline_credit_card_24"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -176,7 +170,6 @@
                         android:foregroundTint="#1A1A1A"
                         app:boxStrokeColor="#1A1A1A"
                         app:hintTextColor="#1A1A1A"
-
                         android:hint="Month"
                         android:layout_marginEnd="8dp"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -188,7 +181,6 @@
                             android:foregroundTint="#1A1A1A"
                             app:boxStrokeColor="#1A1A1A"
                             app:hintTextColor="#1A1A1A"
-
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:maxLength="2"
@@ -201,7 +193,6 @@
                         android:textColor="#1A1A1A"
                         android:foregroundTint="#1A1A1A"
                         app:boxStrokeColor="#1A1A1A"
-
                         android:layout_weight="1"
                         android:hint="Year"
                         app:hintTextColor="#1A1A1A"
@@ -215,7 +206,6 @@
                             android:foregroundTint="#1A1A1A"
                             app:boxStrokeColor="#1A1A1A"
                             app:hintTextColor="#1A1A1A"
-
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="25"/>
@@ -230,7 +220,6 @@
                     android:foregroundTint="#1A1A1A"
                     app:boxStrokeColor="#1A1A1A"
                     app:hintTextColor="#1A1A1A"
-
                     android:hint="Security Code"
                     android:layout_marginStart="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -242,7 +231,6 @@
                         android:inputType="numberPassword"
                         app:boxStrokeColor="#1A1A1A"
                         app:hintTextColor="#1A1A1A"
-
                         android:textColor="#1A1A1A"
                         android:foregroundTint="#1A1A1A"
                         android:maxLength="4"
@@ -259,6 +247,7 @@
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
 
+        <!-- Items Section with RecyclerView -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -268,14 +257,31 @@
             android:layout_marginBottom="8dp"
             android:elevation="2dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2 Items"
-                android:textSize="14sp"
-                android:textColor="#424242"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/item_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2 Items"
+                    android:textSize="14sp"
+                    android:textColor="#424242"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Details"
+                    android:textSize="14sp"
+                    android:textColor="#1976D2"/>
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/delivery_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Arrives by April 3rd to April 9th"
@@ -283,53 +289,17 @@
                 android:textColor="#424242"
                 android:layout_marginTop="4dp"/>
 
-            <LinearLayout
+            <!-- RecyclerView for product items -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/products_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <ImageView
-                    android:id="@+id/product_image"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="8dp">
-
-                    <TextView
-                        android:id="@+id/product_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="NikeCourt Lite 2"
-                        android:textSize="14sp"
-                        android:textColor="#212121"/>
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Qty: 1"
-                        android:textSize="14sp"
-                        android:textColor="#424242"/>
-                </LinearLayout>
-
-                <TextView
-                    android:id="@id/product_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$67"
-                    android:textSize="14sp"
-                    android:textColor="#212121"/>
-            </LinearLayout>
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_product"/>
         </LinearLayout>
 
+        <!-- Total and Pay Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

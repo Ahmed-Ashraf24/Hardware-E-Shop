@@ -11,6 +11,7 @@ import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.HomePage
 import com.example.e_commerce.Presntation.Screens.MainScreen.MainScreen
 import com.example.e_commerce.Presntation.Screens.MainScreen.HomeScreen.PaymentScreen.PaymentPageFragment
 import com.example.e_commerce.R
+import com.example.e_commerce.Utilities.UIModule.CartItem
 import com.example.e_commerce.databinding.FragmentItemPageBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,7 +57,7 @@ lateinit var binding:FragmentItemPageBinding
         binding.descriptionContent.text=product.description
         binding.orderButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, PaymentPageFragment())
+                .replace(R.id.fragment_container, PaymentPageFragment(listOf(CartItem(product,1)),product.price.toDouble()))
                 .commit()
 
         }

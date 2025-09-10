@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.e_commerce.Domain.Entity.Product
 import com.example.e_commerce.R
+import com.example.e_commerce.Utilities.UIModule.CartItem
 
-class CartAdapter(private val cartList: List<Product>,val onQuantityChanged:(Float)->(Unit)) :
+class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Float)->(Unit)) :
     RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
-        var cartItemTotalPrice=0f
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val productImage: ImageView = itemView.findViewById(R.id.product_image)
         val productName: TextView = itemView.findViewById(R.id.product_name)
@@ -44,22 +44,22 @@ class CartAdapter(private val cartList: List<Product>,val onQuantityChanged:(Flo
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        val product = cartList[position]
+        val product = cartList[position].product
         holder.setImage(product)
         holder.productName.text = product.name
         holder.productPrice.text = "${product.price} $"
         holder.productCategory.text = product.category
         holder.totalPriceValue = product.price
         holder.totalPriceTextView.text = "${holder.totalPriceValue} $"
-        holder.quantity=holder.productQuantity.text.toString().toInt()
+       cartList[position].quantity = holder.productQuantity.text.toString().toInt()
         holder.itemView.findViewById<CardView>(R.id.increase_button).setOnClickListener {
             holder.apply {
                 this.productQuantity.text = this.productQuantity.text.toString()
                     .toInt()
                     .inc()
                     .toString()
-                this.quantity++
-                this.totalPriceTextView.text = product.price.times(quantity).toString()
+                cartList[position].quantity.inc()
+                this.totalPriceTextView.text = product.price.times(cartList[position].quantity).toString()
                 onQuantityChanged(product.price)
 
             }
@@ -75,8 +75,8 @@ class CartAdapter(private val cartList: List<Product>,val onQuantityChanged:(Flo
                         .toInt()
                         .dec()
                         .toString()
-                this.quantity--
-                this.totalPriceTextView.text= product.price.times(quantity).toString()
+                cartList[position].quantity.dec()
+                this.totalPriceTextView.text= product.price.times(cartList[position].quantity).toString()
                 onQuantityChanged(-product.price)
             }
 
@@ -84,6 +84,9 @@ class CartAdapter(private val cartList: List<Product>,val onQuantityChanged:(Flo
         }
 
 
+    }
+    fun  getCartListProducts():List<CartItem>{
+        return cartList
     }
 
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="#E0E0E0"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textSize="14sp"
+            android:textColor="#212121"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/product_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size: M, Color: Blue"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/product_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qty: 1"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$67.00"
+        android:textSize="14sp"
+        android:textColor="#212121"
+        android:textStyle="bold"/>
+</LinearLayout>
