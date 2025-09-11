@@ -35,6 +35,7 @@ class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Fl
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
+
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_cart_product, parent, false)
         return CartViewHolder(view)
@@ -58,7 +59,7 @@ class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Fl
                     .toInt()
                     .inc()
                     .toString()
-                cartList[position].quantity.inc()
+                cartList[position].quantity = cartList[position].quantity.inc()
                 this.totalPriceTextView.text = product.price.times(cartList[position].quantity).toString()
                 onQuantityChanged(product.price)
 
@@ -75,7 +76,7 @@ class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Fl
                         .toInt()
                         .dec()
                         .toString()
-                cartList[position].quantity.dec()
+                cartList[position].quantity = cartList[position].quantity.dec()
                 this.totalPriceTextView.text= product.price.times(cartList[position].quantity).toString()
                 onQuantityChanged(-product.price)
             }
