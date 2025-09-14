@@ -71,6 +71,10 @@ class LocalDatabase : DatabaseClient {
         )
     }
 
+    override suspend fun removeFromCart(productId: Int, userId: Int) {
+        databaseInstance.cartDao().removeCartItem(userId,productId)
+    }
+
     override suspend fun getCartProducts(userId: Int): List<ProductEntity> {
         return databaseInstance.cartDao().getCartProducts(userId)
     }

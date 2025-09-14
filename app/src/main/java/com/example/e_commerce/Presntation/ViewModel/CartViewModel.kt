@@ -23,11 +23,18 @@ class CartViewModel:ViewModel() {
     }
     fun addToCart(userId:Int,productId:Int,quantity:Int){
         viewModelScope.launch {
-            Log.d("the cart view model ","function is triggered and the data is userid:$userId || productID:$productId || quantity : $quantity")
-            Log.d("the product ViewModel is called","this is called")
 
             CartUseCase().addToCart(userId=userId,productId=productId,quantity=quantity)
-            Log.d("the cart view model ","the data after been added is ${cartProductList.value}")
+
+        }
+    }
+    fun removeFromCart(userId: Int,productId: Int){
+        viewModelScope.launch {
+            CartUseCase().removeItemFromCart(userId=userId,productId)
+            _cartProductList.value=_cartProductList.value?.filter {product ->
+                product.id !=productId
+            }
+            Log.d("removing item from the cart (viewModel Call) ",cartProductList.value.toString())
 
         }
     }

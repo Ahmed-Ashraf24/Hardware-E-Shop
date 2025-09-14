@@ -13,7 +13,7 @@ import com.example.e_commerce.Domain.Entity.Product
 import com.example.e_commerce.R
 import com.example.e_commerce.Utilities.UIModule.CartItem
 
-class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Float)->(Unit)) :
+class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Float)->(Unit) ,val onRemoveButtonClicked:(Int)->(Unit)) :
     RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val productImage: ImageView = itemView.findViewById(R.id.product_image)
@@ -22,6 +22,7 @@ class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Fl
         val productCategory: TextView = itemView.findViewById(R.id.product_category)
         val productQuantity: TextView = itemView.findViewById(R.id.quantity_text)
         val totalPriceTextView: TextView = itemView.findViewById(R.id.subtotal_amount)
+        val removeButton:ImageView=itemView.findViewById(R.id.delete_button)
         var totalPriceValue: Float = 0f
         var quantity=0
 
@@ -82,9 +83,12 @@ class CartAdapter(private var cartList: List<CartItem>,val onQuantityChanged:(Fl
             }
 
         }
+
         }
 
-
+        holder.removeButton.setOnClickListener {
+            onRemoveButtonClicked(product.id)
+        }
     }
     fun  getCartListProducts():List<CartItem>{
         return cartList

@@ -53,6 +53,7 @@ class CartFragment : Fragment() {
       activityInstance!!.cartViewModel.getCartProducts(user = activityInstance.user!!)
         Log.d("Cart Data from cart Fragment",activityInstance.cartViewModel.cartProductList.value.toString())
         activityInstance.cartViewModel.cartProductList.observe(viewLifecycleOwner){productList->
+            Log.d("the data in cartViewModel is changed (call from the activity)",productList.toString())
             productList.forEach { product->
                 totalItemsSubCount+=product.price
                 binding.subtotalAmount.text=totalItemsSubCount.toString()
@@ -60,11 +61,18 @@ class CartFragment : Fragment() {
             }
             binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
 
-            val adapter=CartAdapter(cartList = productList.map { CartItem(it,1) }){price->
+            val adapter=CartAdapter(cartList = productList.map { CartItem(it,1) },{price->
                 totalItemsSubCount+=price
                 binding.subtotalAmount.text=totalItemsSubCount.toString()
                 binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
+            },
+                {productId->
+                activityInstance.cartViewModel.removeFromCart(productId=productId, userId = activityInstance.user!!.id)
+
+
             }
+            )
+
 
             binding.favouritesRecyclerView.adapter=adapter
 
@@ -73,6 +81,7 @@ class CartFragment : Fragment() {
        val cartList= (binding.favouritesRecyclerView.adapter as CartAdapter).getCartListProducts()
         parentFragmentManager.beginTransaction().replace(R.id.fragment_container,PaymentPageFragment(cartList,totalItemsSubCount.toDouble())).commit()
         }
+
 
 
     }

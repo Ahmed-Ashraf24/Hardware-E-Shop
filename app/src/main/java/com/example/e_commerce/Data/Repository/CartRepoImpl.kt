@@ -20,4 +20,9 @@ class CartRepoImpl:CartRepo {
     override suspend fun addProductToCart(productId:Int,userId: Int,quantaty:Int) {
         localDatabase.addToCart(productId = productId, userId = userId, quantity = quantaty)
     }
+
+    override suspend fun removeItemFromCart(productId: Int, userId: Int) {
+        localDatabase.removeFromCart(productId=productId,userId=userId)
+    }
+
 }

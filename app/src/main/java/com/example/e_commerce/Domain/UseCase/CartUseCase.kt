@@ -13,4 +13,7 @@ class CartUseCase {
     suspend fun getProducts(user: User):List<Product>{
         return cart.getCartProducts(user)
     }
+    suspend fun removeItemFromCart(userId: Int,productId: Int){
+        cart.removeItemFromCart(productId=productId,userId=userId)
+    }
 }

@@ -16,6 +16,7 @@ interface DatabaseClient {
     suspend fun addProduct(product: ProductEntity)
     suspend fun addOrderedProduct(productId: Int, userId: Int)
     suspend fun addToCart(productId: Int, userId: Int, quantity: Int = 1)
+    suspend fun removeFromCart(productId: Int,userId: Int)
     suspend fun getCartProducts(userId: Int): List<ProductEntity>
     suspend fun getOrderedProducts(userId: Int): List<Product>
 }
