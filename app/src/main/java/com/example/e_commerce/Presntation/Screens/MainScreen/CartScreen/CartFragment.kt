@@ -1,5 +1,6 @@
 package com.example.e_commerce.Presntation.Screens.MainScreen.CartScreen
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -47,27 +48,46 @@ class CartFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val activityInstance=(activity as? MainScreen)
       binding.favouritesRecyclerView.layoutManager=LinearLayoutManager(requireContext())
       activityInstance!!.cartViewModel.getCartProducts(user = activityInstance.user!!)
-        Log.d("Cart Data from cart Fragment",activityInstance.cartViewModel.cartProductList.value.toString())
+        if(activityInstance.cartViewModel.cartProductList.value==null){
+            binding.subtotalAmount.text="0"
+            binding.totalAmount.text="0"
+            binding.taxAmount.text="0"
+            binding.shippingAmount.text="0"
+            binding.orderAllButton.isEnabled=false
+        }
         activityInstance.cartViewModel.cartProductList.observe(viewLifecycleOwner){productList->
+            binding.orderAllButton.isEnabled=true
             Log.d("the data in cartViewModel is changed (call from the activity)",productList.toString())
             productList.forEach { product->
                 totalItemsSubCount+=product.price
                 binding.subtotalAmount.text=totalItemsSubCount.toString()
 
             }
-            binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
-
+            if(totalItemsSubCount!=0f) {
+                binding.totalAmount.text = (totalItemsSubCount + 27.99).toString()
+            }
             val adapter=CartAdapter(cartList = productList.map { CartItem(it,1) },{price->
                 totalItemsSubCount+=price
                 binding.subtotalAmount.text=totalItemsSubCount.toString()
                 binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
             },
-                {productId->
-                activityInstance.cartViewModel.removeFromCart(productId=productId, userId = activityInstance.user!!.id)
+                {product,quantity->
+                    activityInstance.cartViewModel.removeFromCart(productId=product.id, userId = activityInstance.user!!.id)
+                    totalItemsSubCount-=product.price*quantity
+                    binding.subtotalAmount.text=totalItemsSubCount.toString()
+                    binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
+                    if(activityInstance.cartViewModel.cartProductList.value==null){
+                        binding.taxAmount.text="0"
+                        binding.shippingAmount.text="0"
+                        binding.totalAmount.text="0"
+                        binding.orderAllButton.isEnabled=false
+                    }
+                    binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
 
 
             }
