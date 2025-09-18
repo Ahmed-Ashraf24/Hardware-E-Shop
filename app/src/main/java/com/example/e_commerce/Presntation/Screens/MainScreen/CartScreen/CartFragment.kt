@@ -29,8 +29,8 @@ class CartFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding:FragmentCartBinding
-    private var totalItemsSubCount =0f
+    lateinit var binding: FragmentCartBinding
+    private var totalItemsSubCount = 0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,68 +43,80 @@ class CartFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding=FragmentCartBinding.inflate(layoutInflater)
+    ): View {
+        binding = FragmentCartBinding.inflate(layoutInflater)
         return binding.root
     }
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val activityInstance=(activity as? MainScreen)
-      binding.favouritesRecyclerView.layoutManager=LinearLayoutManager(requireContext())
-      activityInstance!!.cartViewModel.getCartProducts(user = activityInstance.user!!)
-        if(activityInstance.cartViewModel.cartProductList.value==null){
-            binding.subtotalAmount.text="0"
-            binding.totalAmount.text="0"
-            binding.taxAmount.text="0"
-            binding.shippingAmount.text="0"
-            binding.orderAllButton.isEnabled=false
+        val activityInstance = (activity as? MainScreen)
+
+        binding.favouritesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        activityInstance!!.cartViewModel.getCartProducts(user = activityInstance.user!!)
+        if (activityInstance.cartViewModel.cartProductList.value == null || activityInstance.cartViewModel.cartProductList.value!!.isEmpty()) {
+            binding.subtotalAmount.text = "0"
+            binding.totalAmount.text = "0"
+            binding.taxAmount.text = "0"
+            binding.shippingAmount.text = "0"
+            binding.orderAllButton.isEnabled = false
         }
-        activityInstance.cartViewModel.cartProductList.observe(viewLifecycleOwner){productList->
-            binding.orderAllButton.isEnabled=true
-            Log.d("the data in cartViewModel is changed (call from the activity)",productList.toString())
-            productList.forEach { product->
-                totalItemsSubCount+=product.price
-                binding.subtotalAmount.text=totalItemsSubCount.toString()
+        activityInstance.cartViewModel.cartProductList.value?.let { productList ->
+            productList.forEach { product ->
+                Log.d("products before observe", productList.toString())
+                totalItemsSubCount += product.price
+                binding.subtotalAmount.text = totalItemsSubCount.toString()
 
             }
-            if(totalItemsSubCount!=0f) {
+        }
+        activityInstance.cartViewModel.cartProductList.observe(viewLifecycleOwner) { productList ->
+            Log.d("products after observe", productList.toString())
+
+            binding.orderAllButton.isEnabled = true
+            if (totalItemsSubCount != 0f) {
                 binding.totalAmount.text = (totalItemsSubCount + 27.99).toString()
             }
-            val adapter=CartAdapter(cartList = productList.map { CartItem(it,1) },{price->
-                totalItemsSubCount+=price
-                binding.subtotalAmount.text=totalItemsSubCount.toString()
-                binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
+            val adapter = CartAdapter(cartList = productList.map { CartItem(it, 1) }, { price ->
+                totalItemsSubCount += price
+                binding.subtotalAmount.text = totalItemsSubCount.toString()
+                binding.totalAmount.text = (totalItemsSubCount + 27.99).toString()
             },
-                {product,quantity->
-                    activityInstance.cartViewModel.removeFromCart(productId=product.id, userId = activityInstance.user!!.id)
-                    totalItemsSubCount-=product.price*quantity
-                    binding.subtotalAmount.text=totalItemsSubCount.toString()
-                    binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
-                    if(activityInstance.cartViewModel.cartProductList.value==null){
-                        binding.taxAmount.text="0"
-                        binding.shippingAmount.text="0"
-                        binding.totalAmount.text="0"
-                        binding.orderAllButton.isEnabled=false
+                { product, quantity ->
+                    if (activityInstance.cartViewModel.cartProductList.value == null || activityInstance.cartViewModel.cartProductList.value!!.isEmpty()) {
+                        binding.taxAmount.text = "0"
+                        binding.shippingAmount.text = "0"
+                        binding.totalAmount.text = "0"
+                        binding.orderAllButton.isEnabled = false
+                    } else {
+                        activityInstance.cartViewModel.removeFromCart(
+                            productId = product.id,
+                            userId = activityInstance.user!!.id
+                        )
+                        totalItemsSubCount -= (product.price * quantity)
+                        binding.subtotalAmount.text = totalItemsSubCount.toString()
+                        binding.totalAmount.text = (totalItemsSubCount + 27.99).toString()
                     }
-                    binding.totalAmount.text=(totalItemsSubCount+27.99).toString()
 
 
-            }
+                }
             )
 
 
-            binding.favouritesRecyclerView.adapter=adapter
+            binding.favouritesRecyclerView.adapter = adapter
 
         }
         binding.orderAllButton.setOnClickListener {
-       val cartList= (binding.favouritesRecyclerView.adapter as CartAdapter).getCartListProducts()
-        parentFragmentManager.beginTransaction().replace(R.id.fragment_container,PaymentPageFragment(cartList,totalItemsSubCount.toDouble())).commit()
+            val cartList =
+                (binding.favouritesRecyclerView.adapter as CartAdapter).getCartListProducts()
+            parentFragmentManager.beginTransaction().replace(
+                R.id.fragment_container,
+                PaymentPageFragment(cartList, totalItemsSubCount.toDouble())
+            ).commit()
         }
 
 
-
     }
+
 
     companion object {
         /**

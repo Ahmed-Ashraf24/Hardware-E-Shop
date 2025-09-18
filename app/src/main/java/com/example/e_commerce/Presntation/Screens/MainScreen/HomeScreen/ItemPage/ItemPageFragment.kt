@@ -63,7 +63,7 @@ lateinit var binding:FragmentItemPageBinding
         }
         binding.cartButton.setOnClickListener {
             Log.d("item page","button was clicked")
-            activityInstance.cartViewModel.addToCart(userId = activityInstance.user!!.id, productId = product.id, quantity = 1)
+            activityInstance.cartViewModel.addToCart(user = activityInstance.user!!, productId = product.id, quantity = 1)
         }
         binding.backButton.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fragment_container,

@@ -55,7 +55,7 @@ class ItemsDisplayFragment : Fragment() {
                     FilteredProductsAdapter(this.filter { it.category == activityInstance.selectedCategory }
                    , onAddToCartClick = {product->
 
-                       activityInstance.cartViewModel.addToCart(activityInstance.user!!.id, productId =product.id,1)} )
+                       activityInstance.cartViewModel.addToCart(activityInstance.user!!, productId =product.id,1)} )
             }
 
         }

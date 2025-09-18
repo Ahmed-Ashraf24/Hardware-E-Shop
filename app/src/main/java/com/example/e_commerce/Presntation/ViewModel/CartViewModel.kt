@@ -21,11 +21,10 @@ class CartViewModel:ViewModel() {
             _cartProductList.value=productUseCase
         }
     }
-    fun addToCart(userId:Int,productId:Int,quantity:Int){
+    fun addToCart(user:User,productId:Int,quantity:Int){
         viewModelScope.launch {
-
-            CartUseCase().addToCart(userId=userId,productId=productId,quantity=quantity)
-
+            CartUseCase().addToCart(userId=user.id,productId=productId,quantity=quantity)
+            getCartProducts(user)
         }
     }
     fun removeFromCart(userId: Int,productId: Int){
