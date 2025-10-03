@@ -10,6 +10,6 @@ class LocalLoginRepo : LoginRepoInterface {
     private val database: DatabaseClient = LocalDatabase()
     override suspend fun login(email: String, password: String): User? {
         val user = database.getUserFromEmailAndPassword(email, password)
-        return user?.let { UserMapper.toUser(it) }
+        return user?.let (UserMapper::toUser)
     }
 }
