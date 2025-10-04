@@ -2,7 +2,6 @@ package com.example.e_commerce.Data.DataSource
 
 import android.annotation.SuppressLint
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import com.example.e_commerce.Data.Mapper.ProductMapper
 import com.example.e_commerce.Data.Model.DatabaseModel.AppDatabase
@@ -10,7 +9,6 @@ import com.example.e_commerce.Data.Model.DatabaseModel.CartItemEntity
 import com.example.e_commerce.Data.Model.DatabaseModel.ProductEntity
 import com.example.e_commerce.Data.Model.DatabaseModel.UserEntity
 import com.example.e_commerce.Data.Model.DatabaseModel.UserProductRef
-import com.example.e_commerce.Data.Model.DatabaseModel.UserWithProduct
 import com.example.e_commerce.Domain.Entity.Product
 import com.example.e_commerce.MyApplication
 import com.example.e_commerce.Utilities.PasswordUtilities
