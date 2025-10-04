@@ -42,14 +42,17 @@ class LocalDatabase : DatabaseClient {
         databaseInstance.userDao().updateUserInfo(userId, name, email, address, phoneNumber)
     }
 
-    override suspend fun changeUserPassword(userId: Int,userHashPassword:String,userPasswordSalt:String) {
-        databaseInstance.userDao().updateUserPassword(userId,userHashPassword,userPasswordSalt)
+    override suspend fun changeUserPassword(
+        userId: Int,
+        userHashPassword: String,
+        userPasswordSalt: String
+    ) {
+        databaseInstance.userDao().updateUserPassword(userId, userHashPassword, userPasswordSalt)
     }
 
     @SuppressLint("SuspiciousIndentation")
     override suspend fun getAllProducts(): List<ProductEntity> {
-        val products = databaseInstance.productDao().getAllProducts()
-        return products
+        return databaseInstance.productDao().getAllProducts()
     }
 
     override suspend fun addProduct(product: ProductEntity) {
@@ -72,7 +75,7 @@ class LocalDatabase : DatabaseClient {
     }
 
     override suspend fun removeFromCart(productId: Int, userId: Int) {
-        databaseInstance.cartDao().removeCartItem(userId,productId)
+        databaseInstance.cartDao().removeCartItem(userId, productId)
     }
 
     override suspend fun getCartProducts(userId: Int): List<ProductEntity> {
@@ -80,11 +83,11 @@ class LocalDatabase : DatabaseClient {
     }
 
     override suspend fun getOrderedProducts(userId: Int): List<Product> {
-        return databaseInstance.userProductRefDao().getUserWithProducts(userId).products.run {
-            map {
-                ProductMapper.toProduct(it)
-            }
-        }
+        return databaseInstance.userProductRefDao()
+            .getUserWithProducts(userId)
+            .products
+            .map(ProductMapper::toProduct)
+
 
     }
 
