@@ -29,21 +29,26 @@ class LoginActivity : AppCompatActivity() {
         binding.btnSignIn.setOnClickListener {
             if(!(binding.etEmail.text!!.isBlank() && binding.etPassword.text!!.isBlank())){
                 loginViewModel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
-              loginViewModel.loginState.value.let {
-                  result ->
-                  result!!.fold(
-                      onSuccess = {user->
-                          val intent= Intent(this@LoginActivity, MainScreen::class.java).apply {
-                              putExtra("user",user)
-                          }
-                          startActivity(intent)
-                          this.finish()
-                      },
-                      onFailure = {exception ->
-                          Toast.makeText(this,exception.message,Toast.LENGTH_SHORT).show()
-                      }
-                  )
-              }
+                loginViewModel.loginState.value?.let {
+                        result ->
+                    result.fold(
+                        onSuccess = {user->
+                            val intent= Intent(this@LoginActivity, MainScreen::class.java).apply {
+                                putExtra("user",user)
+                            }
+                            startActivity(intent)
+                            this.finish()
+                        },
+                        onFailure = {exception ->
+                            when(exception){
+
+                                is NullPointerException->Toast.makeText(this,"Invalid email or password",Toast.LENGTH_SHORT).show()
+                                else->Toast.makeText(this,exception.message,Toast.LENGTH_SHORT).show()
+                            }
+
+                        }
+                    )
+                }
             }
             else{
                 Toast.makeText(this,"you must fill all the fields ",Toast.LENGTH_SHORT).show()

@@ -26,11 +26,7 @@ class LoginViewModel : ViewModel() {
             try {
                 val user = LoginUseCase().login(email, password)
 
-                if (user != null) {
-                    _loginState.value = Result.success(user)
-                } else {
-                    _loginState.value = Result.failure(Exception("Invalid email or password"))
-                }
+                _loginState.value = user!!.let { Result.success(it) }
             } catch (e: Exception) {
                 _loginState.value = Result.failure(e)
             } finally {
