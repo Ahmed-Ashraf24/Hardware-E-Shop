@@ -38,18 +38,18 @@ class RegisterActivity : AppCompatActivity() {
         }
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setupElevationToggleAnimation(binding.btnMale, this)
-        setupElevationToggleAnimation(binding.btnFemale, this)
-        binding.btnMale.isEnabled = true
-        binding.btnFemale.isEnabled = true
-        setupListeners()
-
+        with(binding) {
+            setupElevationToggleAnimation(btnMale, this@RegisterActivity)
+            setupElevationToggleAnimation(btnFemale, this@RegisterActivity)
+           btnMale.isEnabled = true
+           btnFemale.isEnabled = true
+            setupListeners()
+        }
     }
     val signUpViewModel=SignUpViewModel()
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setupListeners() {
-        // Add text change listeners to all fields
+
         with(binding) {
             val inputs = listOf(etName, etEmail, etPassword, etConfirmPassword, etPhone, etAddress)
 
