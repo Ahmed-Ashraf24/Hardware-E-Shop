@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -19,12 +20,14 @@ import com.example.e_commerce.Data.Model.DatabaseModel.UserEntity
 import com.example.e_commerce.Presntation.ViewModel.SignUpViewModel
 import com.example.e_commerce.R
 import com.example.e_commerce.Utilities.PasswordUtilities
+import com.example.e_commerce.Utilities.UIModule.GenderOptions
 import com.example.e_commerce.databinding.ActivityRegisterBinding
 import kotlinx.coroutines.runBlocking
 
 class RegisterActivity : AppCompatActivity() {
-    lateinit var binding :ActivityRegisterBinding
+    lateinit var binding: ActivityRegisterBinding
     private var selectedGender: String? = null
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,14 +41,21 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         with(binding) {
-            setupElevationToggleAnimation(btnMale, this@RegisterActivity)
-            setupElevationToggleAnimation(btnFemale, this@RegisterActivity)
-           btnMale.isEnabled = true
-           btnFemale.isEnabled = true
+            setupElevationToggleAnimation(
+                mapOf(
+                    GenderOptions.Male to btnMale,
+                    GenderOptions.Female to btnFemale
+                ), this@RegisterActivity
+            )
+
+            btnMale.isEnabled = true
+            btnFemale.isEnabled = true
             setupListeners()
         }
     }
-    val signUpViewModel=SignUpViewModel()
+
+    val signUpViewModel = SignUpViewModel()
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setupListeners() {
 
@@ -69,15 +79,24 @@ class RegisterActivity : AppCompatActivity() {
             // Continue button
             btnContinue.setOnClickListener {
                 if (selectedGender == null) {
-                    Toast.makeText(this@RegisterActivity, "Please select gender", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        "Please select gender",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     return@setOnClickListener
                 }
 
                 if (areAllFieldsValid()) {
                     runBlocking {
-                    registerUser()}
+                        registerUser()
+                    }
                 } else {
-                    Toast.makeText(this@RegisterActivity, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        "Please fill all fields",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
@@ -121,30 +140,34 @@ class RegisterActivity : AppCompatActivity() {
         with(binding) {
             if (isMale) {
 
-                btnFemale.isEnabled=false
+                btnFemale.isEnabled = false
             } else {
-                btnMale.isEnabled=false
+                btnMale.isEnabled = false
             }
         }
     }
+
     @SuppressLint("ClickableViewAccessibility")
-    fun setupElevationToggleAnimation(button: Button, context: Context) {
+    fun setupElevationToggleAnimation(genderMap: Map<GenderOptions, View>, context: Context) {
         var isElevated = false
+        genderMap.forEach { genderType, toggle ->
+            toggle.setOnClickListener {
+                val animatorRes = if (isElevated) {
+                    R.animator.button_elevation_release
+                } else {
+                    R.animator.button_elevation_press
+                }
 
-        button.setOnClickListener {
-            val animatorRes = if (isElevated) {
-                R.animator.button_elevation_release // back to normal
-            } else {
-                R.animator.button_elevation_press // elevate
+                val animator = AnimatorInflater.loadAnimator(context, animatorRes)
+                animator.setTarget(toggle)
+                animator.start()
+
+                isElevated = !isElevated
             }
-
-            val animator = AnimatorInflater.loadAnimator(context, animatorRes)
-            animator.setTarget(button)
-            animator.start()
-
-            isElevated = !isElevated // toggle state
         }
+
     }
+
     @RequiresApi(Build.VERSION_CODES.O)
     private suspend fun registerUser() {
         with(binding) {
@@ -156,38 +179,45 @@ class RegisterActivity : AppCompatActivity() {
             val address = etAddress.text.toString()
 
             if (password != confirmPassword) {
-                Toast.makeText(this@RegisterActivity, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RegisterActivity, "Passwords do not match", Toast.LENGTH_SHORT)
+                    .show()
                 return
             }
 
             // Proceed with registration logic
-            Toast.makeText(this@RegisterActivity, "Registering $name as $selectedGender", Toast.LENGTH_LONG).show()
-            val salt=PasswordUtilities.generateSalt()
-            val hashedPassword=PasswordUtilities.hashPassword(password,salt)
+            Toast.makeText(
+                this@RegisterActivity,
+                "Registering $name as $selectedGender",
+                Toast.LENGTH_LONG
+            ).show()
+            val salt = PasswordUtilities.generateSalt()
+            val hashedPassword = PasswordUtilities.hashPassword(password, salt)
             signUpViewModel.register(
                 UserEntity(
-                name = name,
-                email = email,
-                gender = selectedGender!!,
-                hashPassword = hashedPassword,
-                passwordSalt = salt,
-                profileImage = "",
-                phoneNumber = if (phone.isNotEmpty()) phone else null,
-                address = if (address.isNotEmpty()) address else null
-            )
+                    name = name,
+                    email = email,
+                    gender = selectedGender!!,
+                    hashPassword = hashedPassword,
+                    passwordSalt = salt,
+                    profileImage = "",
+                    phoneNumber = if (phone.isNotEmpty()) phone else null,
+                    address = if (address.isNotEmpty()) address else null
+                )
             )
 
-            signUpViewModel.registerState.value.let {
-                result ->
+            signUpViewModel.registerState.value.let { result ->
                 result!!.fold(
                     onSuccess = {
-                        val intent=Intent(this@RegisterActivity, LoginActivity::class.java)
+                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                         startActivity(intent)
                     },
-                    onFailure = {
-                        exception ->
-                        Log.d("exception appears during register",exception.toString())
-                        Toast.makeText(this@RegisterActivity,exception.toString(),Toast.LENGTH_SHORT).show()
+                    onFailure = { exception ->
+                        Log.d("exception appears during register", exception.toString())
+                        Toast.makeText(
+                            this@RegisterActivity,
+                            exception.toString(),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 )
             }
