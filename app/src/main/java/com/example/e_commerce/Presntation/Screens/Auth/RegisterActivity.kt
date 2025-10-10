@@ -41,10 +41,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         with(binding) {
             setupElevationToggleAnimation(
-                mapOf(
-                    GenderOptions.Male to btnMale,
-                    GenderOptions.Female to btnFemale
-                ), this@RegisterActivity
+                    btnMale,btnFemale, context=this@RegisterActivity
             )
 
             btnMale.isEnabled = true
@@ -66,16 +63,15 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             btnMale.setOnClickListener {
-                selectedGender = "Male"
+                selectedGender = GenderOptions.Male.name
                 highlightGenderSelection(true)
             }
 
             btnFemale.setOnClickListener {
-                selectedGender = "Female"
+                selectedGender = GenderOptions.Female.name
                 highlightGenderSelection(false)
             }
 
-            // Continue button
             btnContinue.setOnClickListener {
                 if (selectedGender == null) {
                     Toast.makeText(
@@ -99,7 +95,6 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
 
-            // Disable gender buttons initially
             btnMale.isEnabled = false
             btnFemale.isEnabled = false
         }
@@ -147,10 +142,10 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    fun setupElevationToggleAnimation(genderMap: Map<GenderOptions, View>, context: Context) {
+    fun setupElevationToggleAnimation(vararg views:View, context: Context) {
         var isElevated = false
-        genderMap.forEach { genderType, toggle ->
-            toggle.setOnClickListener {
+       views.forEach { view ->
+           view.setOnClickListener {
                 val animatorRes = if (isElevated) {
                     R.animator.button_elevation_release
                 } else {
@@ -158,7 +153,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
                 val animator = AnimatorInflater.loadAnimator(context, animatorRes)
-                animator.setTarget(toggle)
+                animator.setTarget(view)
                 animator.start()
 
                 isElevated = !isElevated
